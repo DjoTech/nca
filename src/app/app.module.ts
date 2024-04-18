@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,14 +11,13 @@ import { FooterComponent } from './component/footer/footer.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     RouterModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
