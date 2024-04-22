@@ -68,49 +68,26 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-2 text-center">
-      <div class="photo-container">
-        <img src="assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg" alt="" class="img-fluid rounded mb-3">
+    <ng-container *ngFor="let people of peoples">
+      <div class="col-md-2 text-center" [ngClass]="{'expanded': people.expanded}">
+        <div class="photo-container"
+        (click)="onClickType(people)">
+          <img [src]="people.image" alt="" [ngClass]="{'expanded': people.expanded}">
+        </div>
+        <p [ngClass]="{'bold-text': people.expanded}">{{people.name}}</p>
+        <p [ngClass]="{'bold-text': people.expanded}">{{people.role}}</p>
       </div>
-      <p>Ridho Singgih</p>
-      <p>Founding Partner</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="photo-container">
-        <img src="assets/Materi Website Mawaka/Foto Handy Setianto.jpeg" alt="" class="img-fluid rounded mb-3">
-      </div>
-      <p>Handy Setianto</p>
-      <p>Founding Partner</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="photo-container">
-        <img src="assets/Materi Website Mawaka/Foto Edgar Handoko.jpeg" alt="" class="img-fluid rounded mb-3">
-      </div>
-      <p>Edgar Handoko</p>
-      <p>Founding Partner</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="photo-container">
-        <img src="assets/Materi Website Mawaka/Foto Alfian Rosadi.jpeg" alt="" class="img-fluid rounded mb-3">
-      </div>
-      <p>Alfian Rosaldi</p>
-      <p>Founding Partner</p>
-    </div>
-    <div class="col-md-2 text-center">
-      <div class="photo-container">
-        <img src="assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg" alt="" class="img-fluid rounded mb-3">
-      </div>
-      <p>Naufal Aji</p>
-      <p>Founding Partner</p>
-    </div>
+    </ng-container>
   </div>
   <div class="row mt-4">
     <div class="col-md-4">
-      <img src="assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg" alt="" class="w-100 rounded mb-3">
+      <div class="photo-container">
+        <img [src]="detail_people.image" alt="" class="w-100 rounded mb-3">
+      </div>
     </div>
     <div class="col-md-8">
-      <h3 class="fw-bolder">Ridho Singgih</h3>
-      <p></p>
+      <h3 class="fw-bolder">{{detail_people.name}}</h3>
+      <p>{{contents}}</p>
     </div>
   </div>
 </section>
