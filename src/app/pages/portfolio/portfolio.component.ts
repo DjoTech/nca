@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnChanges{
+
+  @Input() useClass = true
 
   portfolios = [
     {
@@ -37,6 +39,14 @@ export class PortfolioComponent {
       image: "assets/Materi Website Mawaka/Logo Helopro.svg"
     },
   ]
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // @ts-ignore
+    if (changes.useClass) {
+      // @ts-ignore
+      this.useClass = changes.useClass.currentValue
+    }
+  }
 
 
 }
