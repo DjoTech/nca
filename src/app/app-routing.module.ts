@@ -8,9 +8,6 @@ import { StrategyComponent } from './pages/strategy/strategy.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-  },  {
     path: 'home',
     component: HomeComponent,
   },
@@ -29,6 +26,11 @@ const routes: Routes = [
   {
     path: 'contact-us',
     component: ContactUsComponent,
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
 ];
 

@@ -1,4 +1,4 @@
-<section class="container my-5 pt-md-5 {{ useClass ? 'c-pt-2' : ''}}">
+<section class="container my-5 py-md-5">
   <div class="row">
     <div class="col-md-12">
       <h1 class="fw-bolder">Our Portfolio</h1>
@@ -6,17 +6,15 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <button class="btn rounded-5 border-2 border">All Category</button>
-      <button class="btn rounded-5 border-2 border ms-1">Construction</button>
-      <button class="btn rounded-5 border-2 border ms-1">Telco - Infrastructure</button>
-      <button class="btn rounded-5 border-2 border ms-1">Power Solution</button>
-      <button class="btn rounded-5 border-2 border ms-1">Logistics</button>
-      <button class="btn rounded-5 border-2 border ms-1">Business Services</button>
-      <button class="btn rounded-5 border-2 border ms-1">Fintech</button>
+      <ng-container *ngFor="let category of categories; let index = index">
+        <button
+          (click)="filter(category)"
+          class="btn rounded-5 border-2 border {{ index > 0 ? 'ms-1' : '' }}">{{ category.category_name }}</button>
+      </ng-container>
     </div>
   </div>
   <div class="row m-3 row-cols-md-4 g-4">
-    <div class="col" *ngFor="let portfolio of portfolios">
+    <div class="col" *ngFor="let portfolio of data">
       <div class="card rounded-5 h-100">
         <div class="card-body">
           <img src="{{ portfolio.image }}" alt="" class="w-100 border border-0 rounded-5 card-img-top object-fit-contain" style="height: 75%;">

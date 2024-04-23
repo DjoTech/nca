@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -35,10 +36,17 @@ export class HomeComponent implements OnInit {
     },
   ]
 
-  constructor() {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) {
   }
 
   ngOnInit(): void {
+  }
+
+  navigateTo(path: string) {
+    this.router.navigate(['./portfolio'], {relativeTo: this.route})
   }
 
 }
