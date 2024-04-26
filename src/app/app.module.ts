@@ -11,6 +11,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import {PortfolioComponent} from "./pages/portfolio/portfolio.component";
 import {ContactUsComponent} from "./pages/contact-us/contact-us.component";
 import {StrategyComponent} from "./pages/strategy/strategy.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,11 +24,12 @@ import {StrategyComponent} from "./pages/strategy/strategy.component";
     ContactUsComponent,
     StrategyComponent
   ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    RouterModule
-  ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        RouterModule,
+        ReactiveFormsModule
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
