@@ -10,11 +10,11 @@
     <div class="col-md-8">
       <div class="collapse navbar-collapse fw-bolder row flex-wrap mx-3" id="navbarText">
         <div class="navbar-nav me-auto mb-2 mb-lg-0">
-          <div class="col-md-2 nav-item"><a routerLink="home" class="nav-link text-mawaka">Home</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="about-us" class="nav-link text-mawaka">About Us</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="portfolio" class="nav-link text-mawaka">Portfolio</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="strategy" class="nav-link text-mawaka">Strategy</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="contact-us" class="nav-link text-mawaka">Contact Us</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="home" class="nav-link text-mawaka {{ currentPath === '/home' ? 'fw-bolder' : '' }}">Home</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="about-us" class="nav-link text-mawaka {{ currentPath === '/about-us' ? 'fw-bolder' : '' }}">About Us</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="portfolio" class="nav-link text-mawaka {{ currentPath === '/portfolio' ? 'fw-bolder' : '' }}">Portfolio</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="strategy" class="nav-link text-mawaka {{ currentPath === '/strategy' ? 'fw-bolder' : '' }}">Strategy</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="contact-us" class="nav-link text-mawaka {{ currentPath === '/contact-us' ? 'fw-bolder' : '' }}">Contact Us</a></div>
           <div class="col-md-2 nav-item"><a href="" class="nav-link"><i class="bi bi-linkedin text-mawaka"></i></a></div>
         </div>
       </div>

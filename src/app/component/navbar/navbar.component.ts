@@ -9,13 +9,15 @@ import {NavigationEnd, Router} from "@angular/router";
 export class NavbarComponent implements OnInit {
 
   isHomepage = false
+  currentPath = '/home'
 
   constructor(
     private router: Router
   ) {
     router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
-        this.isHomepage = location.pathname === '/home'
+        this.currentPath = location.pathname
+        this.isHomepage = this.currentPath === '/home'
       }
     })
   }

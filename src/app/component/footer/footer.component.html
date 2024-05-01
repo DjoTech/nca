@@ -5,10 +5,10 @@
         <div class="col-md-3 my-3">
           <span class="fw-bolder">Sitemap</span>
           <hr>
-          <a class="nav-link" routerLink="about-us" routerLinkActive="active-route">About Us</a>
-          <a class="nav-link mt-3" routerLink="portfolio" routerLinkActive="active-route">Portfolio</a>
-          <a class="nav-link mt-3" routerLink="strategy" routerLinkActive="active-route">Strategy</a>
-          <a class="nav-link mt-3" routerLink="contact-us" routerLinkActive="active-route">Contact Us</a>
+          <a class="nav-link {{ currentPath === '/about-us' ? 'fw-bolder' : '' }}" routerLink="about-us" routerLinkActive="active-route">About Us</a>
+          <a class="nav-link mt-3 {{ currentPath === '/portfolio' ? 'fw-bolder' : '' }}" routerLink="portfolio" routerLinkActive="active-route">Portfolio</a>
+          <a class="nav-link mt-3 {{ currentPath === '/strategy' ? 'fw-bolder' : '' }}" routerLink="strategy" routerLinkActive="active-route">Strategy</a>
+          <a class="nav-link mt-3 {{ currentPath === '/contact-us' ? 'fw-bolder' : '' }}" routerLink="contact-us" routerLinkActive="active-route">Contact Us</a>
         </div>
         <div class="col-md-1 my-3">
           <span class="fw-bolder">Follow Us</span>
@@ -18,7 +18,7 @@
         <div class="col-md-3 my-3">
           <span class="fw-bolder">Get in touch</span>
           <hr>
-          <p>
+          <p class="text-justify">
             If you have any question or just <br>
             want to say hi, please feel free <br>
             to reach us on:
@@ -37,11 +37,11 @@
                       style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-md-5">
-              <small>
-                SOHO Pancoran Noble 1515 <br>
-                Jl Letjen M.T. Haryono <br>
-                No Kav. 2-3 RT 01 RW 06 <br>
-                Tebet Barat, Kec. Tebet, <br>
+              <small class="text-justify">
+                SOHO Pancoran Noble 1515
+                Jl Letjen M.T. Haryono
+                No Kav. 2-3 RT 01 RW 06
+                Tebet Barat, Kec. Tebet,
                 Jakarta, DKI Jakarta 12810
               </small>
             </div>
