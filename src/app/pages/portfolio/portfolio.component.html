@@ -1,7 +1,7 @@
 <section class="container my-5 py-md-5">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="fw-bolder">Our Portfolio</h1>
+      <h1 class="fw-bolder text-mawaka">Our Portfolio</h1>
     </div>
   </div>
   <div class="row">
@@ -9,7 +9,7 @@
       <ng-container *ngFor="let category of categories; let index = index">
         <button
           (click)="filter(category)"
-          class="btn rounded-5 border-2 border {{ index > 0 ? 'ms-1' : '' }}">{{ category.category_name }}</button>
+          class="btn rounded-5 text-mawaka border-color-mawaka fw-bold {{ index > 0 ? 'ms-1' : '' }}">{{ category.category_name }}</button>
       </ng-container>
     </div>
   </div>
