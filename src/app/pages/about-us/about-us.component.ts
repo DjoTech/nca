@@ -7,6 +7,9 @@ import { ChangeDetectionStrategy, ChangeDetectorRef,Component } from '@angular/c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutUsComponent {
+
+  placeholder = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci beatae blanditiis, consequatur doloremque eaque eos ex fugit id illo incidunt ipsum minus nesciunt nihil nostrum odio optio placeat quaerat quia repellendus rerum sunt voluptatibus. Distinctio, dolores ea eum hic impedit iste libero, non odio porro quae quas quasi quidem quos repellendus sit soluta veniam vero. Accusamus aliquam blanditiis cum exercitationem illum ipsam iusto labore libero magni modi nulla officiis omnis qui quibusdam sint, temporibus velit veniam voluptatum? Architecto commodi consequatur deleniti earum fugiat, iste itaque iusto maiores maxime nemo nesciunt nobis odio, qui quia sapiente ut veniam voluptatibus!"
+
   peoples = [
     {
       name: 'Ridho Singgih',
@@ -49,7 +52,7 @@ export class AboutUsComponent {
     {
       type: "RIDHO_SINGGIH",
       active: true,
-      contents:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      contents: this.placeholder,
       education:[
 
       ],
@@ -57,7 +60,7 @@ export class AboutUsComponent {
     {
       type: "HANDY_SETIANTO",
       active: false,
-      contents: "eeeeeeeeeeeeeeeee",
+      contents: this.placeholder,
       education:[
 
       ],
@@ -65,7 +68,7 @@ export class AboutUsComponent {
     {
       type: "EDGAR_HANDOKO",
       active: false,
-      contents: "bbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      contents: this.placeholder,
       education:[
 
       ],
@@ -73,7 +76,7 @@ export class AboutUsComponent {
     {
       type: "ALFIAN_ROSALDI",
       active: false,
-      contents: "cccccccccccccccccccccccccccc",
+      contents: this.placeholder,
       education:[
 
       ],
@@ -81,7 +84,7 @@ export class AboutUsComponent {
     {
       type: "NAUFAL_AJI",
       active: false,
-      contents: 'ddddddddddddddddddddddd',
+      contents: this.placeholder,
       education:[
 
       ],

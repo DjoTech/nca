@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -78,7 +78,10 @@ export class PortfolioComponent{
 
   data = this.portfolios
 
+  selected = null;
+
   filter(item: any) {
+    this.selected = item.category_id
     if (item.category_id) {
       this.data =  this.portfolios.filter(portfolio => portfolio.category_id === item.category_id)
     } else {

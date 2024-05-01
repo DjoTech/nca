@@ -8,8 +8,8 @@
           passionate in bringing success to tech startups and sustainable impact <br>
           to the digital acosystem in Southeast Asia.
         </h3>
-        <a class="btn border border-2 rounded-5 text-white mt-3 p-md-3" href="../about-us">
-          Learn More ->
+        <a class="btn border border-2 rounded-5 text-white mt-3 p-md-3" style="width: 10rem" href="../about-us">
+          Learn More <i class="bi bi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -17,10 +17,10 @@
 
   <section class="container my-5">
     <div class="row">
-      <div class="col-md-4">
-        <h1 class="fw-bolder text-mawaka">Our People</h1>
+      <div class="col-md-3">
+        <h1 class="fw-bolder text-mawaka display-5 title">Our People</h1>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9">
         <p class="text-justify">
           Our team of experienced and passionate professionals is the backbone of the <br>
           Northstar Group and the primary driver of our success.
@@ -32,12 +32,13 @@
         <div class="col-md-4">
           <div class="card h-100 border-0">
             <div class="card-body">
-              <img src="{{ person.image }}" alt="" class="w-100 bg-mawaka-light rounded-5 pt-md-5 pe-md-5 ps-md-5 card-img-bottom object-fit-cover" style="height: 75% !important; width: 50%">
-              <div class="text-center mt-5">
+              <div class="bg-mawaka-light rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden" style="height: 75% !important;">
+                <img id="person" src="{{ person.image }}" alt="" class="w-100 card-img-bottom object-fit-cover h-100">
+              </div>
+              <div class="text-center mt-3">
                 <h4 class="fw-bolder">{{ person.name }}</h4>
                 <h4 class="fw-normal">{{ person.position }}</h4>
               </div>
-
             </div>
           </div>
         </div>
@@ -46,8 +47,8 @@
         <div class="card h-100 border-0">
           <div class="card-body">
             <div class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5" style="height: 75% !important; width: 50%">
-              <button class="btn border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka" href="../portfolio">
-                Find Out More ->
+              <button class="btn border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light" href="../portfolio">
+                Find Out More <i class="bi bi-arrow-right"></i>
               </button>
             </div>
             <h4 class="text-center">
