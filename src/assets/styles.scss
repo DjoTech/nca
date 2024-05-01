@@ -22,9 +22,16 @@
   text-align: justify;
 }
 
+
 .title {
   background-size: calc(100% - 30px) auto;
   background: linear-gradient(#d4ede2, #d4ede2) no-repeat;
+  background-position-y: 35px;
+}
+
+.title-dark {
+  background-size: calc(100% - 30px) auto;
+  background: linear-gradient(#4d8096, #4d8096) no-repeat;
   background-position-y: 35px;
 }
 

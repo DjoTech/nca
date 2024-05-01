@@ -1,4 +1,4 @@
-<section class="container my-5 py-md-5">
+<section class="container mt-5 py-md-5">
   <div class="row">
     <div class="col-md-6">
       <h1 class="fw-bolder text-mawaka display-5">Our <span class="title">Investment Philosophy</span></h1>
@@ -11,71 +11,73 @@
       </p>
     </div>
   </div>
-  <div class="row justify-content-around">
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <p><span class="fw-bolder text-mawaka">Ma</span> - <span class="fst-italic">Manacika</span></p>
-          <p class="text-justify">
-            We embrace optimism as the
-            foundation of our approach, seeking to
-            unlock the potential of Small and
-            Medium Enterprises (SMEs) through a
-            positive outlook and belief in their
-            growth.
-          </p>
-        </div>
-      </div>
-      <img src="assets/home/bg-home.jpg" alt="" class="w-100 mt-3 mb-5">
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <p><span class="fw-bolder text-mawaka">wa</span> - <span class="fst-italic">Wacika</span></p>
-          <p class="text-justify">
-            Collaboration is at the heart of our
-            strategy. e foster synergistic
-            partnerships, both within our
-            environment and with stakeholders, to
-            amplify the impact of our investments
-          </p>
-        </div>
-      </div>
-      <img src="assets/home/bg-home.jpg" alt="" class="w-100 mt-3 mb-5">
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <p><span class="fw-bolder text-mawaka">ka</span> - <span class="fst-italic">Kayika</span></p>
-          <p class="text-justify">
-            Commitment is our unwavering
-            promise. We are dedicated to adding
-            long-term value, aligning our interests
-            with management, and prudentity
-            managing riskts to ensure sustainable
-            success.
-          </p>
-        </div>
-      </div>
-      <img src="assets/home/bg-home.jpg" alt="" class="w-100 mt-3 mb-5">
-    </div>
-  </div>
-
 </section>
-
+<div class="">
+  <section class="container">
+    <div class="row justify-content-around">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <p><span class="fw-bolder text-mawaka">Ma</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Manacika</span></p>
+            <p class="text-justify">
+              We embrace optimism as the
+              foundation of our approach, seeking to
+              unlock the potential of Small and
+              Medium Enterprises (SMEs) through a
+              positive outlook and belief in their
+              growth.
+            </p>
+          </div>
+        </div>
+        <img src="assets/Ma.png" alt="" class="w-100 mt-3 mb-5">
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <p><span class="fw-bolder text-mawaka">wa</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Wacika</span></p>
+            <p class="text-justify">
+              Collaboration is at the heart of our
+              strategy. e foster synergistic
+              partnerships, both within our
+              environment and with stakeholders, to
+              amplify the impact of our investments
+            </p>
+          </div>
+        </div>
+        <img src="assets/Wa.png" alt="" class="w-100 mt-3 mb-5">
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <p><span class="fw-bolder text-mawaka">ka</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Kayika</span></p>
+            <p class="text-justify">
+              Commitment is our unwavering
+              promise. We are dedicated to adding
+              long-term value, aligning our interests
+              with management, and prudentity
+              managing riskts to ensure sustainable
+              success.
+            </p>
+          </div>
+        </div>
+        <img src="assets/Ka.png" alt="" class="w-100 mt-3 mb-5">
+      </div>
+    </div>
+  </section>
+</div>
 <div class="bg-mawaka">
   <section class="container py-5 pt-md-5">
     <div class="row mt-5 mb-5 justify-content-center">
       <div class="col-md-3 text-center">
-        <h1 class="fw-bolder text-in-blue display-5 title">Our People</h1>
+        <h1 class="fw-bolder text-in-blue display-5 title-dark">Our People</h1>
       </div>
     </div>
     <div class="row justify-content-between text-in-blue">
       <ng-container *ngFor="let people of peoples">
         <div class="col-md-2 text-center" [ngClass]="{'expanded': people.expanded}">
-          <div class="photo-container"
+          <div class="photo-container {{ !people.expanded ? 'opacity-50' : '' }}"
                (click)="onClickType(people)">
-            <img [src]="people.image" alt="" [ngClass]="{'expanded': people.expanded}">
+            <img [src]="people.image" alt="" class="" [ngClass]="{'expanded': people.expanded}">
           </div>
           <p [ngClass]="{'bold-text': people.expanded}" class="mt-3">
             {{people.name}} <br>
