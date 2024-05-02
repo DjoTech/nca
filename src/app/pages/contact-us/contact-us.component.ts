@@ -26,8 +26,8 @@ export class ContactUsComponent implements OnInit{
       full_name: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       phone_number: new FormControl(null, [Validators.required]),
-      subject: new FormControl(null, Validators.required),
-      message: new FormControl(null, Validators.required),
+      subject: new FormControl("Mawaka", [Validators.required]),
+      message: new FormControl("", [Validators.required, Validators.max(100)]),
     });
 
   }
