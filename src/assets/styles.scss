@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('ttf'),
+       url('/assets/fonts/Poppins-Bold.ttf') format('ttf')
+  /* Add other font formats if necessary */
+}
+
+.body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.bg-gray {
+  background-color: #EDF1F5 !important;
+}
+
+
 .text-mawaka {
   color: #0B3E7C !important;
 }

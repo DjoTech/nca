@@ -1,48 +1,50 @@
-<section class="container my-5 pt-md-5">
-  <div class="row">
-    <div class="col-md-3">
-      <h1 class="fw-bolder text-mawaka display-5 title">Contact Us</h1>
-    </div>
-  </div>
-  <form class="row card p-md-5 mt-3 mx-3" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-5">
-          <p>Please choose one. I am a ...</p>
-          <button type="button" class="btn border-color-mawaka rounded-5 bg-mawaka-light text-mawaka">Business Owner</button>
-          <button type="button" class="btn border-color-mawaka rounded-5 bg-mawaka-light text-mawaka ms-2">Investor</button>
-
-
-          <div class="row mt-3">
-            <div class="col-md-12">
-              <input type="text" formControlName="full_name" placeholder="Name" class="form-control border-start-0 border-end-0 border-top-0" required>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-6">
-              <input type="email" formControlName="email" placeholder="Email" class="form-control border-start-0 border-end-0 border-top-0" required>
-            </div>
-            <div class="col-md-6">
-              <input type="text" formControlName="phone_number" placeholder="Phone Number" class="form-control border-start-0 border-end-0 border-top-0" required>
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-md-12">
-              <textarea name="Message" class="form-control" formControlName="message" placeholder="Message" id="" cols="30" rows="10" required></textarea>
-              <small class="float-end {{ form.value.message.length > 100 ? 'text-danger' : '' }}">{{ form.value.message.length }}/100</small>
-              <ng-container *ngIf="form.value.message.length > 100">
-                <span class="text-danger">the message may not be longer than 100 characters.</span>
-              </ng-container>
-
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary rounded-5 w-25 bg-mawaka mt-3" [disabled]="false">Submit</button>
-        </div>
-        <div class="col-md-7 my-3">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d454.6226693123928!2d106.84502251270091!3d-6.243166935618841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9259615c5%3A0x1fa5a36bd5f609ec!2sSOHO%20Pancoran!5e0!3m2!1sen!2sid!4v1713883483307!5m2!1sen!2sid"
-                  style="border:0;" allowfullscreen="" class="w-100 h-100 rounded-5" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+<div class="bg-gray">
+  <section class="container p-md-5">
+    <div class="row mt-5">
+      <div class="col-md-3">
+        <h1 class="fw-bolder text-mawaka display-5 title">Contact Us</h1>
       </div>
     </div>
-  </form>
-</section>
+    <form class="row card p-md-5 mt-3 mx-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-5">
+            <p>Please choose one. I am a ...</p>
+            <button type="button" class="btn border-color-mawaka rounded-5 bg-mawaka-light text-mawaka">Business Owner</button>
+            <button type="button" class="btn border-color-mawaka rounded-5 bg-mawaka-light text-mawaka ms-2">Investor</button>
+
+
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <input type="text" formControlName="full_name" placeholder="Name" class="form-control border-start-0 border-end-0 border-top-0" required>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-6">
+                <input type="email" formControlName="email" placeholder="Email" class="form-control border-start-0 border-end-0 border-top-0" required>
+              </div>
+              <div class="col-md-6">
+                <input type="text" formControlName="phone_number" placeholder="Phone Number" class="form-control border-start-0 border-end-0 border-top-0" required>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <textarea name="Message" class="form-control" formControlName="message" placeholder="Message" id="" cols="30" rows="10" required></textarea>
+                <small class="float-end {{ form.value.message.length > 100 ? 'text-danger' : '' }}">{{ form.value.message.length }}/100</small>
+                <ng-container *ngIf="form.value.message.length > 100">
+                  <span class="text-danger">the message may not be longer than 100 characters.</span>
+                </ng-container>
+
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary rounded-5 w-25 bg-mawaka mt-3" [disabled]="false">Submit</button>
+          </div>
+          <div class="col-md-7 my-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d454.6226693123928!2d106.84502251270091!3d-6.243166935618841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3b9259615c5%3A0x1fa5a36bd5f609ec!2sSOHO%20Pancoran!5e0!3m2!1sen!2sid!4v1713883483307!5m2!1sen!2sid"
+                    style="border:0;" allowfullscreen="" class="w-100 h-100 rounded-5" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
