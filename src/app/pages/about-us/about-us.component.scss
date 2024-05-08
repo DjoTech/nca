@@ -6,6 +6,28 @@
   padding-top: 200px !important;
 }
 
+.vision-mission-container {
+  overflow: hidden;
+  background-color: white;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+/* card.component.scss */
+.custom-card {
+  position: relative;
+}
+
+.top-left-button {
+  position: absolute;
+  top: -15px;
+  left:-8px;
+  cursor: default;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .photo-container {
   position: relative;
   overflow: hidden;
