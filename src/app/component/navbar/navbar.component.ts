@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
     router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
         this.currentPath = location.pathname
-        this.isHomepage = this.currentPath === '/home'
+        this.isHomepage = (this.currentPath === '/home' || this.currentPath === '/mawaka/home')
       }
     })
   }
