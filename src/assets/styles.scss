@@ -65,6 +65,32 @@
   text-align: justify;
 }
 
+.text-green-mawaka {
+  color: #4ABB94 !important;
+}
+
+.bg-green-mawaka {
+  background-color: #4ABB94 !important;
+}
+
+.half-and-half {
+  background: linear-gradient(to bottom, #EDF1F5 50%, #0B3E7C 50%); /* Half blue, half gray */
+  //height: 200px; /* Set the height as needed */
+  //text-align: center; /* Center content vertically */
+  //color: white; /* Text color */
+  //font-size: 24px; /* Text size */
+  //display: flex; /* Use flexbox to center content */
+  //justify-content: center; /* Center content horizontally */
+  //align-items: center; /* Center content vertically */
+}
+
+.bg-blue-mawaka {
+  background-color: #146FC1 !important;
+}
+
+.text-blue-mawaka {
+  color: #146FC1 !important;
+}
 
 .title {
   background-size: calc(100% - 30px) auto;
