@@ -15,48 +15,50 @@
     </div>
   </section>
 
-  <section class="container my-5">
-    <div class="row">
-      <div class="col-md-3">
-        <h1 class="fw-bolder text-mawaka display-5 title">Our People</h1>
+  <div class="bg-white py-md-5 mt-5">
+    <section class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="fw-bolder text-mawaka display-5 title">Our People</h1>
+        </div>
+        <div class="col-md-9">
+          <p class="text-justify">
+            Our team of experienced and passionate professionals is the backbone of the Northstar Group and the primary driver of our success.
+          </p>
+        </div>
       </div>
-      <div class="col-md-9">
-        <p class="text-justify">
-          Our team of experienced and passionate professionals is the backbone of the Northstar Group and the primary driver of our success.
-        </p>
-      </div>
-    </div>
-    <div class="row row-cols-1 row-cols-md-2 g-3">
-      <ng-container *ngFor="let person of persons">
+      <div class="row row-cols-1 row-cols-md-2 g-3">
+        <ng-container *ngFor="let person of persons">
+          <div class="col-md-4">
+            <div class="card h-100 border-0">
+              <div class="card-body">
+                <div class="bg-mawaka-light rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden" style="height: 75% !important;">
+                  <img id="person" src="{{ person.image }}" alt="" class="w-100 card-img-bottom object-fit-cover h-100">
+                </div>
+                <div class="text-center mt-3">
+                  <h4 class="fw-bolder">{{ person.name }}</h4>
+                  <h4 class="fw-normal">{{ person.position }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
         <div class="col-md-4">
           <div class="card h-100 border-0">
             <div class="card-body">
-              <div class="bg-mawaka-light rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden" style="height: 75% !important;">
-                <img id="person" src="{{ person.image }}" alt="" class="w-100 card-img-bottom object-fit-cover h-100">
+              <div class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5" style="height: 75% !important; width: 50%">
+                <a class="btn border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light" href="../portfolio">
+                  Find Out More <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-              <div class="text-center mt-3">
-                <h4 class="fw-bolder">{{ person.name }}</h4>
-                <h4 class="fw-normal">{{ person.position }}</h4>
-              </div>
+              <h4 class="text-center">
+                <span class="fw-bolder"></span><br>
+              </h4>
             </div>
-          </div>
-        </div>
-      </ng-container>
-      <div class="col-md-4">
-        <div class="card h-100 border-0">
-          <div class="card-body">
-            <div class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5" style="height: 75% !important; width: 50%">
-              <a class="btn border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light" href="../portfolio">
-                Find Out More <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-            <h4 class="text-center">
-              <span class="fw-bolder"></span><br>
-            </h4>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <app-portfolio></app-portfolio>

@@ -10,7 +10,7 @@
         <ng-container *ngFor="let category of categories; let index = index">
           <button
             (click)="filter(category)"
-            class="btn rounded-5 m-1 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border border-2 text-mute' }}">{{ category.category_name }}</button>
+            class="btn rounded-5 m-1 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>
         </ng-container>
       </div>
     </div>

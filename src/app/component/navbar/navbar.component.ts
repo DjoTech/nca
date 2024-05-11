@@ -14,15 +14,26 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router
   ) {
-    router.events.subscribe(val => {
+
+  }
+
+  ngOnInit(): void {
+    this.checkRouter()
+  }
+
+  checkRouter() {
+    this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
         this.currentPath = location.pathname
+        if (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home') {
+          document.body.style.backgroundColor = 'white';
+        } else {
+          document.body.style.backgroundColor = '#EDF1F5';
+        }
         this.isHomepage = (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home')
       }
     })
   }
 
-  ngOnInit(): void {
-  }
 
 }
