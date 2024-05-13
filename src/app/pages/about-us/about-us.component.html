@@ -35,8 +35,8 @@
       </div>
     </div>
     <div class="row mt-5 justify-content-center align-items-center">
-      <div class="col-md-1 my-3">
-        <img src="assets/about-us-1.png" alt="">
+      <div class="col-md-1 my-3 " [ngClass]="{'centered': isMobile}">
+        <img [src]=blue_arrow alt="">
       </div>
       <div class="col-md-8 p-md-5 bg-green-mawaka text-light rounded-4">
         <p><span class="fw-bolder text-green-mawaka p-md-3 rounded-3 bg-white">Wa</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Wacika</span></p>
@@ -50,8 +50,8 @@
       </div>
     </div>
     <div class="row mt-5 justify-content-end align-items-center">
-      <div class="col-md-1 my-3">
-        <img src="assets/about-us-2.png" alt="">
+      <div class="col-md-1 my-3" [ngClass]="{'centered': isMobile}">
+        <img [src]=green_arrow alt="">
       </div>
       <div class="col-md-8 p-md-5 bg-blue-mawaka text-light rounded-4">
         <p><span class="fw-bolder text-blue-mawaka p-md-3 rounded-3 bg-white">Ka</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Kayika</span></p>

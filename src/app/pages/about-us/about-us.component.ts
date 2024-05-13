@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef,Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef,Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -93,10 +93,24 @@ export class AboutUsComponent {
 
   contents: any = this.lists[0].contents
   detail_people : any = this.peoples[0]
-
+  blue_arrow = "assets/about-us-1.png"
+  green_arrow = "assets/about-us-2.png"
+  isMobile=false;
   constructor(
     private ref: ChangeDetectorRef,
-  ) {
+  )
+  {
+    this.updateImage();
+  }
+
+  updateImage() {
+    if (window.innerWidth < 780) {
+      this.blue_arrow = "assets/Arrow_blue_mobile.png"
+      this.green_arrow = "assets/Arrow_green.png"
+      this.isMobile = true;
+    } else {
+      this.isMobile = false;
+    }
   }
 
   onClickType(item: any): void {
