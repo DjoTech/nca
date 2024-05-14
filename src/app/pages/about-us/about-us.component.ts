@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef,Component, HostListener } from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -6,7 +6,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef,Component, HostListener } fr
   styleUrls: ['./about-us.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutUsComponent {
+export class AboutUsComponent implements OnInit{
+
+
+  @ViewChild('blueArrow') blueArrow: any;
+  @ViewChild('greenArrow') greenArrow: any;
 
   placeholder = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci beatae blanditiis, consequatur doloremque eaque eos ex fugit id illo incidunt ipsum minus nesciunt nihil nostrum odio optio placeat quaerat quia repellendus rerum sunt voluptatibus. Distinctio, dolores ea eum hic impedit iste libero, non odio porro quae quas quasi quidem quos repellendus sit soluta veniam vero. Accusamus aliquam blanditiis cum exercitationem illum ipsam iusto labore libero magni modi nulla officiis omnis qui quibusdam sint, temporibus velit veniam voluptatum? Architecto commodi consequatur deleniti earum fugiat, iste itaque iusto maiores maxime nemo nesciunt nobis odio, qui quia sapiente ut veniam voluptatibus!"
 
@@ -125,6 +129,60 @@ export class AboutUsComponent {
 
   collapseItem(item: any) {
     item.expanded = false;
+  }
+
+  ngOnInit(): void {
+    console.log(this.blueArrow, document.getElementById('blueArrow'))
+  }
+
+  private mobileBreakpoint = 768; // Max width for mobile view
+  private tabletBreakpoint = 992; // Max width for tablet view
+
+  // Initial screen size category
+  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
+
+  // Function to get the screen size category
+  private getCategory(width: number): 'mobile' | 'tablet' | 'desktop' {
+    if (width < this.mobileBreakpoint) {
+      return 'mobile';
+    } else if (width < this.tabletBreakpoint) {
+      return 'tablet';
+    } else {
+      return 'desktop';
+    }
+  }
+
+  // Function to handle actions when resize causes a category change
+  private handleResizeChange(newCategory: 'mobile' | 'tablet' | 'desktop') {
+    // console.log(`Screen size category changed to: ${newCategory}`);
+    // Implement any other logic needed when the screen size category changes
+    // For example, you could adjust layout, reload components, etc.
+    if (newCategory === 'mobile' || newCategory === 'tablet') {
+      this.blueArrow.nativeElement.src = 'assets/Arrow_blue_mobile.png'
+      this.greenArrow.nativeElement.src = 'assets/Arrow_green.png';
+      this.ref.detectChanges();
+      return;
+    }
+
+    this.blueArrow.nativeElement.src = 'assets/about-us-1.png'
+    this.greenArrow.nativeElement.src = 'assets/about-us-2.png'
+    this.ref.detectChanges();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // console.log(`Window resized to width: ${width}, height: ${height}`);
+
+    // Get the new screen size category
+    const newCategory = this.getCategory(width);
+
+    // Perform actions if the category changes
+    if (newCategory !== this.currentCategory) {
+      this.currentCategory = newCategory;
+      this.handleResizeChange(newCategory);
+    }
   }
 
 }
