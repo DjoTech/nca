@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   persons = [
     {
       name: "Ridho Singgih",
-      position: "Founding Partner",
+      position: "Managing Partner & CEO",
       image: "assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg"
     },
     {
@@ -21,18 +21,18 @@ export class HomeComponent implements OnInit {
     },
     {
       name: "Edgar Handoko",
-      position: "Founding Partner",
+      position: "Chief of Internal Affairs & Compliance",
       image: "assets/Materi Website Mawaka/Foto Edgar Handoko.jpeg"
     },
     {
       name: "Alfian Rosadi",
-      position: "Founding Partner",
+      position: "Chief of Investment",
       image: "assets/Materi Website Mawaka/Foto Alfian Rosadi.jpeg"
     },
     {
       name: "Naufal Aji",
-      position: "Founding Partner",
-      image: "assets/Materi Website Mawaka/Foto Naufal Aji.png"
+      position: "Chief of Investment",
+      image: "assets/Materi Website Mawaka/Naufal.jpg"
     },
   ]
 

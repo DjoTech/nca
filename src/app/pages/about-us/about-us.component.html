@@ -1,8 +1,8 @@
 <div class="bg-gray">
   <section class="container mt-5 py-md-5">
     <div class="row">
-      <div class="col-md-6">
-        <h1 class="fw-bolder text-mawaka display-5">Our <span class="title">Investment Philosophy</span></h1>
+      <div class="col-md-12">
+        <h1 class="fw-bolder text-mawaka display-5">Our <span class="title pe-3">Investment Philosophy</span></h1>
       </div>
     </div>
     <div class="row">
@@ -255,10 +255,13 @@
         </div>
       </div>
       <div class="col-md-8 align-self-center">
-        <h3 class="fw-bolder mt-3">{{detail_people.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> Founding Partner</small></h3>
-        <p class="text-justify mt-3">{{contents}}</p>
+        <h3 class="fw-bolder mt-3">{{detail_people.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> {{detail_people.role}}</small></h3>
+        <p class="text-justify mt-3">{{contents.contents}}</p>
         <p class="fw-bold mt-3">Education</p>
-        <img src="assets/education-itb.webp" class="img-thumbnail" style="height: 50px; width: 150px;" alt="">
+        <ng-container *ngFor="let education of contents.education">
+          <img [src]="education" class="img-thumbnail me-2" style="height: 80px;" alt="">
+        </ng-container>
+
       </div>
     </div>
   </section>
