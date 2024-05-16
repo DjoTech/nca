@@ -41,12 +41,48 @@ export class ContactUsComponent implements OnInit{
     this.form.get('role').setValue(item)
   }
 
+  generateMessage(role: string): string {
+    const fullName = this.form.get('full_name').value;
+    const email = this.form.get('email').value;
+    const phoneNumber = this.form.get("phone_number").value;
+    const message = this.form.get('message').value;
+    if (role === 'INVESTOR') {
+
+      return `
+            Dear Mawaka Team,
+
+            My name is ${fullName}, and I am an investor.
+
+            ${message}
+
+            Sincerely,
+
+            ${fullName}
+            Email: ${email}
+            Phone: ${phoneNumber}
+  `;
+    }
+
+    return `
+            Dear Mawaka Team,
+
+            My name is ${fullName}, and I am a business owner.
+
+            ${message}
+
+            Sincerely,
+
+            ${fullName}
+            Email: ${email}
+            Phone: ${phoneNumber}
+  `;
+  }
+
   onSubmit() {
     const fullName = this.form.get('full_name').value;
     const subject = this.form.get('subject').value;
-    const message = this.form.get('message').value;
-    const phoneNumber = this.form.get("phone_number").value;
-    const mailtoLink = `mailto:${this.email}?subject=${encodeURIComponent(subject + fullName.toUpperCase())}&body=${encodeURIComponent(message)}&cc=${encodeURIComponent(phoneNumber)}`;
+    const role = this.form.get('role').value
+    const mailtoLink = `mailto:${this.email}?subject=${encodeURIComponent(subject + fullName.toUpperCase())}&body=${encodeURIComponent(this.generateMessage(role))}`;
     window.open(mailtoLink, '_blank');
   }
 

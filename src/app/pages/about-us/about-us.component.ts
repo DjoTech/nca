@@ -1,12 +1,21 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 
+// @ts-ignore
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutUsComponent implements OnInit{
+export class AboutUsComponent implements AfterViewInit {
 
 
   @ViewChild('blueArrow') blueArrow: any;
@@ -24,7 +33,7 @@ export class AboutUsComponent implements OnInit{
     },
     {
       name: 'Handy Setianto',
-      role: 'Founding Partner',
+      role: 'Managing Partner & CIO',
       image:'assets/Materi Website Mawaka/Foto Handy Setianto.jpeg',
       key: "HANDY_SETIANTO",
       expanded: false
@@ -95,6 +104,12 @@ export class AboutUsComponent implements OnInit{
     },
   ]
 
+  private mobileBreakpoint = 768; // Max width for mobile view
+  private tabletBreakpoint = 992; // Max width for tablet view
+
+  // Initial screen size category
+  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
+
   contents: any = this.lists[0]
   detail_people : any = this.peoples[0]
   blue_arrow = "assets/about-us-1.png"
@@ -104,18 +119,18 @@ export class AboutUsComponent implements OnInit{
     private ref: ChangeDetectorRef,
   )
   {
-    // this.updateImage();
+
   }
 
-  // updateImage() {
-  //   if (window.innerWidth < 780) {
-  //     this.blue_arrow = "assets/Arrow_blue_mobile.png"
-  //     this.green_arrow = "assets/Arrow_green.png"
-  //     this.isMobile = true;
-  //   } else {
-  //     this.isMobile = false;
-  //   }
-  // }
+  ngAfterViewInit(): void {
+    this.windowCheck();
+  }
+
+  windowCheck() {
+    const width = window.innerWidth;
+    const category = this.getCategory(width);
+    this.handleResizeChange(category)
+  }
 
   onClickType(item: any): void {
     this.peoples.forEach(i => i.expanded = i.key === item.key)
@@ -130,16 +145,6 @@ export class AboutUsComponent implements OnInit{
   collapseItem(item: any) {
     item.expanded = false;
   }
-
-  ngOnInit(): void {
-    console.log(this.blueArrow, document.getElementById('blueArrow'))
-  }
-
-  private mobileBreakpoint = 768; // Max width for mobile view
-  private tabletBreakpoint = 992; // Max width for tablet view
-
-  // Initial screen size category
-  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
   // Function to get the screen size category
   private getCategory(width: number): 'mobile' | 'tablet' | 'desktop' {
@@ -172,7 +177,7 @@ export class AboutUsComponent implements OnInit{
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  onResize(event: any = null) {
     const width = window.innerWidth;
     const height = window.innerHeight;
     // console.log(`Window resized to width: ${width}, height: ${height}`);

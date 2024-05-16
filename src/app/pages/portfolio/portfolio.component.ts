@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent{
+export class PortfolioComponent implements OnInit{
 
   categories = [
     {
@@ -80,6 +80,16 @@ export class PortfolioComponent{
 
   selected = null;
 
+  currentPath = '';
+  isHomePage = true;
+
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.checkRouter()
+  }
+
   filter(item: any) {
     this.selected = item.category_id
     if (item.category_id) {
@@ -87,6 +97,11 @@ export class PortfolioComponent{
     } else {
       this.data = this.portfolios
     }
+  }
+
+  checkRouter() {
+    this.currentPath = location.pathname
+    this.isHomePage = (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home')
   }
 
 }

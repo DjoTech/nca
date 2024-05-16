@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: "Handy Setianto",
-      position: "Founding Partner",
+      position: "Managing Partner & CIO",
       image: "assets/Materi Website Mawaka/Foto Handy Setianto.jpeg"
     },
     {
