@@ -1,23 +1,104 @@
-import { Component } from '@angular/core';
-import {NavigationEnd, Router} from "@angular/router";
+import {AfterViewInit, ChangeDetectorRef, Component, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements AfterViewInit{
+
+  @ViewChild('bg-footer-2') bgFooter2: any;
 
   currentPath = '/home'
+  private mobileBreakpoint = 768; // Max width for mobile view
+  private tabletBreakpoint = 992; // Max width for tablet view
+
+  // Initial screen size category
+  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
   constructor(
-    private router: Router
+    private ref: ChangeDetectorRef
   ) {
-    router.events.subscribe(val => {
-      if (val instanceof NavigationEnd) {
-        this.currentPath = location.pathname
-      }
-    })
+  }
+
+  ngAfterViewInit(): void {
+    this.windowCheck();
+  }
+
+  windowCheck() {
+    const width = window.innerWidth;
+    const category = this.getCategory(width);
+    this.handleResizeChange(category)
+  }
+
+  private getCategory(width: number): 'mobile' | 'tablet' | 'desktop' {
+    if (width < this.mobileBreakpoint) {
+      return 'mobile';
+    } else if (width < this.tabletBreakpoint) {
+      return 'tablet';
+    } else {
+      return 'desktop';
+    }
+  }
+
+  private handleResizeChange(newCategory: 'mobile' | 'tablet' | 'desktop') {
+    // console.log(`Screen size category changed to: ${newCategory}`);
+    // Implement any other logic needed when the screen size category changes
+    // For example, you could adjust layout, reload components, etc.
+    const bgFooter2 = document.getElementById('bgFooter2')
+    const mawakaName = document.getElementById('mawakaName')
+    const mawakaLogo = document.getElementById('mawakaLogo')
+
+    if (newCategory === 'mobile' || newCategory === 'tablet') {
+      // @ts-ignore
+      bgFooter2.classList.remove('bg-footer-2')
+      // @ts-ignore
+      bgFooter2.classList.add('bg-black')
+
+      // @ts-ignore
+      mawakaName.classList.remove('text-start')
+      // @ts-ignore
+      mawakaName.classList.add('text-center')
+      // @ts-ignore
+      mawakaLogo.classList.remove('text-end')
+      // @ts-ignore
+      mawakaLogo.classList.add('text-center')
+
+      this.ref.detectChanges();
+      return;
+    }
+
+    // @ts-ignore
+    mawakaName.classList.remove('text-center')
+    // @ts-ignore
+    mawakaName.classList.add('text-start')
+    // @ts-ignore
+    mawakaLogo.classList.remove('text-center')
+    // @ts-ignore
+    mawakaLogo.classList.add('text-end')
+
+    // @ts-ignore
+    bgFooter2.classList.remove('bg-black')
+    // @ts-ignore
+    bgFooter2.classList.add('bg-footer-2')
+
+    this.ref.detectChanges();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any = null) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // console.log(`Window resized to width: ${width}, height: ${height}`);
+
+    // Get the new screen size category
+    const newCategory = this.getCategory(width);
+
+    // Perform actions if the category changes
+    if (newCategory !== this.currentCategory) {
+      this.currentCategory = newCategory;
+      this.handleResizeChange(newCategory);
+    }
   }
 
 }

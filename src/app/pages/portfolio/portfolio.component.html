@@ -10,7 +10,7 @@
         <ng-container *ngFor="let category of categories; let index = index">
           <button
             (click)="filter(category)"
-            class="btn rounded-5 m-1 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>
+            class="btn rounded-5 m-1 fs-5 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>
         </ng-container>
       </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="card rounded-5 h-100">
           <img src="{{ portfolio.image }}" alt="" class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain" style="height: 75%;">
           <div class="card-body">
-            <h6 class="fw-bolder">{{ portfolio.name }}</h6>
+            <h6 class="fw-bolder fs-5">{{ portfolio.name }}</h6>
           </div>
         </div>
       </div>

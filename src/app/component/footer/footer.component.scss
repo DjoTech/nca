@@ -9,3 +9,15 @@ hr {
 #one > div {
   z-index: 9999;
 }
+
+.bg-footer {
+  background-image: url('../../../assets/footer-darken.png');
+  background-position: center -564px;
+  background-repeat: no-repeat;
+}
+
+.bg-footer-2 {
+  background-image: url('../../../assets/footer-darken.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}

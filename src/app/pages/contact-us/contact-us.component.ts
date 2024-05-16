@@ -32,11 +32,6 @@ export class ContactUsComponent implements OnInit{
     });
   }
 
-
-  test() {
-    console.log(this.form.get('email').errors.email)
-  }
-
   selectRole(item: string) {
     this.form.get('role').setValue(item)
   }

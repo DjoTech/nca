@@ -1,8 +1,8 @@
 <footer class="text-white">
-  <div style="background-image: url('assets/footer-darken.png');background-position: center -594px;  background-repeat: no-repeat;" class="container-fluid" id="one">
+  <div class="container-fluid bg-footer" id="one">
     <div class="container py-md-5 z-3">
-      <div class="row">
-        <div class="col-md-3 my-3">
+      <div class="row justify-content-between">
+        <div class="col-md-2 fs-5 my-3">
           <small class="fw-bolder">Sitemap</small>
           <hr>
           <a class="nav-link {{ currentPath === '/about-us' ? 'fw-bolder' : '' }}" routerLink="about-us" routerLinkActive="active-route"><small>About Us</small></a>
@@ -10,12 +10,12 @@
           <a class="nav-link mt-3 {{ currentPath === '/strategy' ? 'fw-bolder' : '' }}" routerLink="strategy" routerLinkActive="active-route"><small>Strategy</small></a>
           <a class="nav-link mt-3 {{ currentPath === '/contact-us' ? 'fw-bolder' : '' }}" routerLink="contact-us" routerLinkActive="active-route"><small>Contact Us</small></a>
         </div>
-        <div class="col-md-1 my-3">
+        <div class="col-md-2 fs-5 my-3">
           <small class="fw-bolder">Follow Us</small>
           <hr>
           <p><i class="bi bi-linkedin"></i></p>
         </div>
-        <div class="col-md-3 my-3">
+        <div class="col-md-3 fs-5 my-3">
           <small class="fw-bolder">Get in touch</small>
           <hr>
           <p class="text-justify">
@@ -26,7 +26,7 @@
               +62 813 1190 7967</small>
           </p>
         </div>
-        <div class="col-md-5 my-3">
+        <div class="col-md-5 fs-5 my-3">
           <small class="fw-bolder">Address</small>
           <hr>
           <div class="row">
@@ -51,13 +51,13 @@
     </div>
   </div>
 
-  <div class="container-fluid" style="background-image: url('assets/footer-darken.png'); background-position: center; background-repeat: no-repeat;">
-    <div class="row p-md-3 justify-content-between">
-      <div class="col-md-3 text-center">
-        <div class="mt-3">© 2023 Mawaka Ventures</div>
+  <div #bgFooter2 id="bgFooter2" class="container-fluid bg-footer-2">
+    <div class="row p-md-3 justify-content-around">
+      <div id="mawakaName" class="col-md-6 text-center">
+        <div class="mt-3 fs-5">© 2023 Mawaka Ventures</div>
       </div>
-      <div class="col-md-3 text-center">
-        <img src="assets/Materi Website Mawaka/logo-mawaka.png" alt="">
+      <div id="mawakaLogo" class="col-md-6 text-center">
+        <img src="assets/Materi Website Mawaka/logo-mawaka.png" alt="logo mawaka">
       </div>
     </div>
   </div>

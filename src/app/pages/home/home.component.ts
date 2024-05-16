@@ -45,7 +45,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateTo(path: string) {
+  onClickLearnMore() {
+    this.router.navigate(['./about-us'], {relativeTo: this.route})
+  }
+
+  onClickFindOutMore() {
     this.router.navigate(['./portfolio'], {relativeTo: this.route})
   }
 
