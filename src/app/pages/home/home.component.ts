@@ -12,27 +12,27 @@ export class HomeComponent implements OnInit {
     {
       name: "Ridho Singgih",
       position: "Managing Partner & CEO",
-      image: "assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg"
+      image: "assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png"
     },
     {
       name: "Handy Setianto",
       position: "Managing Partner & CIO",
-      image: "assets/Materi Website Mawaka/Foto Handy Setianto.jpeg"
+      image: "assets/Materi Website Mawaka/Foto Handy Setianto.png"
     },
     {
       name: "Edgar Handoko",
       position: "Chief of Internal Affairs & Compliance",
-      image: "assets/Materi Website Mawaka/Foto Edgar Handoko.jpeg"
+      image: "assets/Materi Website Mawaka/Foto Edgar Handoko.png"
     },
     {
       name: "Alfian Rosadi",
       position: "Chief of Investment",
-      image: "assets/Materi Website Mawaka/Foto Alfian Rosadi.jpeg"
+      image: "assets/Materi Website Mawaka/Foto Alfian Rosadi.png"
     },
     {
       name: "Naufal Aji",
       position: "Chief of Investment",
-      image: "assets/Materi Website Mawaka/Naufal.jpg"
+      image: "assets/Materi Website Mawaka/Foto Naufal Aji.png"
     },
   ]
 

@@ -2,11 +2,10 @@
            style="background-image: url('assets/home/bg-home.png'); background-position: center; background-position-y: -1000px; background-repeat: no-repeat; height: 95vh;">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-1">Investing the Future</h1>
+        <h1 class="fw-bolder display-1">Unlocking the Potential of Southeast Asia</h1>
         <h3 class="mt-3 fw-normal">
-          Mawaka Venture is the pioneering and leading sector-agnostic VC firm <br>
-          passionate in bringing success to tech startups and sustainable impact <br>
-          to the digital acosystem in Southeast Asia.
+          Mawaka Venture is a boutique private equity firm with a deep understanding of Southeast Asia's unique market dynamics. <br>
+          We leverage our expertise and network to identify and invest in the region's most innovative and high-growth businesses.
         </h3>
         <a class="btn border border-2 rounded-5 text-white mt-3 p-md-3" style="width: 10rem" routerLink="../about-us">
           Learn More <i class="bi bi-arrow-right"></i>
@@ -32,8 +31,8 @@
           <div class="col-md-4">
             <div class="card h-100 border-0">
               <div class="card-body">
-                <div class="bg-mawaka-light rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden" style="height: 75% !important;">
-                  <img id="person" src="{{ person.image }}" alt="" class="w-100 card-img-bottom object-fit-cover h-100">
+                <div class="bg-white rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden text-center" style="height: 75% !important;">
+                  <img id="person" src="{{ person.image }}" alt="{{ person.name }}" style="width: 90% !important;" class="object-fit-cover h-100">
                 </div>
                 <div class="text-center mt-3">
                   <h4 class="fw-bolder">{{ person.name }}</h4>
@@ -46,7 +45,9 @@
         <div class="col-md-4 " >
           <div class="card h-100 border-0">
             <div class="card-body">
-              <div class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5" style="height: 75% !important; width: 50%">
+              <div
+                style="height: 75% !important; width: 50%; background-image: url('assets/find-out-more.png'); background-size: cover"
+                class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5">
                 <a routerLink="../portfolio" class="nav-link border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light">
                   Find Out More <i class="bi bi-arrow-right"></i>
                 </a>

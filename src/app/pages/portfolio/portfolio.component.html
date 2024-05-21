@@ -16,12 +16,12 @@
     </div>
     <div class="row p-md-3 row-cols-md-4 g-4">
       <div class="col" *ngFor="let portfolio of data">
-        <div class="card rounded-5 h-100">
-          <img src="{{ portfolio.image }}" alt="" class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain" style="height: 75%;">
+        <a class="card rounded-5 h-100 text-decoration-none" href="{{ portfolio.link }}" target="_blank">
+            <img src="{{ portfolio.image }}" alt="{{ portfolio.name }}" class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain" style="height: 75%;">
           <div class="card-body">
             <h6 class="fw-bolder fs-5">{{ portfolio.name }}</h6>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
