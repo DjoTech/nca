@@ -27,35 +27,35 @@ export class AboutUsComponent implements AfterViewInit {
     {
       name: 'Ridho Singgih',
       role: 'Managing Partner & CEO',
-      image:'assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.jpeg',
+      image:'assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png',
       key: "RIDHO_SINGGIH",
       expanded: true
     },
     {
       name: 'Handy Setianto',
       role: 'Managing Partner & CIO',
-      image:'assets/Materi Website Mawaka/Foto Handy Setianto.jpeg',
+      image:'assets/Materi Website Mawaka/Foto Handy Setianto.png',
       key: "HANDY_SETIANTO",
       expanded: false
     },
     {
       name: 'Edgar Handoko',
       role: 'Chief of Internal Affairs & Compliance',
-      image:'assets/Materi Website Mawaka/Foto Edgar Handoko.jpeg',
+      image:'assets/Materi Website Mawaka/Foto Edgar Handoko.png',
       key: "EDGAR_HANDOKO",
       expanded: false
     },
     {
       name: 'Alfian Rosaldi',
       role: 'Chief of Investment',
-      image:'assets/Materi Website Mawaka/Foto Alfian Rosadi.jpeg',
+      image:'assets/Materi Website Mawaka/Foto Alfian Rosadi.png',
       key: "ALFIAN_ROSALDI",
       expanded: false
     },
     {
       name: 'Naufal Aji',
       role: 'Chief of Investment',
-      image:'assets/Materi Website Mawaka/Naufal.jpg',
+      image:'assets/Materi Website Mawaka/Foto Naufal Aji.png',
       key: "NAUFAL_AJI",
       expanded: false
     }
@@ -69,6 +69,7 @@ export class AboutUsComponent implements AfterViewInit {
       education:[
         'assets/education-itb.webp'
       ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       type: "HANDY_SETIANTO",
@@ -77,14 +78,17 @@ export class AboutUsComponent implements AfterViewInit {
       education:[
 
       ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       type: "EDGAR_HANDOKO",
       active: false,
       contents: "As the Chief of Internal Affairs & Compliance of Mawaka Ventures, Edgar Handoko takes pride in providing the best yet fast services to Mawaka’s internal affairs and its clients which consist of legal services, human resources compliances, licences regulatory overview, internal and external due diligence, and many others. With more than 6 years of experiences, Edgar has been involved in various corporate legal transactions and dispute resolution where he has represented numerous Indonesian and international company. To maximize his quality services, Edgar has advanced attorney’s licenses such as: (i) Receiver and Administrator licensed under the Indonesian Association of Receiver and Administrator, (ii) Tax Attorneys licensed under the Tax Court of the Republic Indonesia, and (ii) Mediator licensed under the Jakarta District Courts.       ",
       education:[
-        "assets/Materi Website Mawaka/logo-ugm.png"
+        "assets/Materi Website Mawaka/logo-ugm.png",
+        "assets/Materi Website Mawaka/logo ui.png"
       ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       type: "ALFIAN_ROSALDI",
@@ -93,14 +97,17 @@ export class AboutUsComponent implements AfterViewInit {
       education:[
         "assets/Materi Website Mawaka/logo-ugm.png"
       ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       type: "NAUFAL_AJI",
       active: false,
       contents: "As the Chief of Investment Officer of Mawaka Ventures, Naufal Aji holds a Bachelor of Industrial Engineering from the University of Indonesia and a Master of Business Management from The University of Warwick. With more than five years of experience as a Management Consultant at Accenture and more than two years as a director of a fintech company at PT Finnet Indonesia, Naufal has honed his expertise in strategic investment and financial planning. His professional journey is complemented by his past involvement as a member of the Indonesian Students Association in London, highlighting his commitment to leadership and international collaboration.",
       education:[
-        "assets/Materi Website Mawaka/logo ui.png"
+        "assets/Materi Website Mawaka/logo ui.png",
+        "assets/Materi Website Mawaka/logo warwick.png"
       ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
   ]
 

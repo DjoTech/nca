@@ -238,11 +238,11 @@
       </div>
     </div>
     <div class="row justify-content-between text-in-blue align-items-center">
-      <ng-container *ngFor="let people of peoples">
+      <ng-container *ngFor="let people of peoples" id="peoples">
         <div class="{{people.expanded ? 'col-md-3 expanded' : 'col-md-2' }} text-center">
           <div class="photo-container cursor-pointer {{ !people.expanded ? 'opacity-50' : '' }}"
                (click)="onClickType(people)">
-            <img [src]="people.image" alt="" class="img-thumbnail border-0 {{ people.expanded ? 'expanded' : '' }}">
+            <img [src]="people.image" alt="" class="img-thumbnail border-0 h-100 {{ people.expanded ? 'expanded' : '' }}">
           </div>
           <p [ngClass]="{'bold-text': people.expanded}" class="mt-3">
             {{people.name}} <br>
@@ -254,12 +254,13 @@
     <div class="row mt-5 text-in-blue">
       <div class="col-md-4">
         <div class="photo-container">
-          <img [src]="detail_people.image" alt="" class="w-100 rounded mb-3 img-thumbnail">
+          <img [src]="detail_people.image" alt="" class="w-100 rounded mb-3 img-thumbnail h-100">
         </div>
       </div>
       <div class="col-md-8 align-self-center">
         <h3 class="fw-bolder mt-3">{{detail_people.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> {{detail_people.role}}</small></h3>
         <p class="text-justify mt-3">{{contents.contents}}</p>
+        <p class="fw-bold mt-3">Contact me : {{contents.contact}}</p>
         <p class="fw-bold mt-3">Education</p>
         <ng-container *ngFor="let education of contents.education">
           <img [src]="education" class="img-thumbnail me-2" style="height: 80px;" alt="">
