@@ -32,7 +32,7 @@
             <div class="card h-100 border-0">
               <div class="card-body">
                 <div class="bg-white rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden text-center" style="height: 75% !important;">
-                  <img id="person" src="{{ person.image }}" alt="{{ person.name }}" style="width: 90% !important;" class="object-fit-cover h-100">
+                  <img id="person" src="{{ person.image }}" alt="{{ person.name }}" style="width: 90% !important; cursor:pointer ;" class="object-fit-cover h-100" (click)="goToAboutUs(person.name)">
                 </div>
                 <div class="text-center mt-3">
                   <h4 class="fw-bolder">{{ person.name }}</h4>

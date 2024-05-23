@@ -3,10 +3,12 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  ElementRef,
   HostListener,
   OnInit,
   ViewChild
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 // @ts-ignore
 @Component({
@@ -17,9 +19,10 @@ import {
 })
 export class AboutUsComponent implements AfterViewInit {
 
-
+  name: string | null = null;
   @ViewChild('blueArrow') blueArrow: any;
   @ViewChild('greenArrow') greenArrow: any;
+  @ViewChild('peoplesSection', { static: true }) peoplesSection!: ElementRef;
 
   placeholder = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci beatae blanditiis, consequatur doloremque eaque eos ex fugit id illo incidunt ipsum minus nesciunt nihil nostrum odio optio placeat quaerat quia repellendus rerum sunt voluptatibus. Distinctio, dolores ea eum hic impedit iste libero, non odio porro quae quas quasi quidem quos repellendus sit soluta veniam vero. Accusamus aliquam blanditiis cum exercitationem illum ipsam iusto labore libero magni modi nulla officiis omnis qui quibusdam sint, temporibus velit veniam voluptatum? Architecto commodi consequatur deleniti earum fugiat, iste itaque iusto maiores maxime nemo nesciunt nobis odio, qui quia sapiente ut veniam voluptatibus!"
 
@@ -46,10 +49,10 @@ export class AboutUsComponent implements AfterViewInit {
       expanded: false
     },
     {
-      name: 'Alfian Rosaldi',
+      name: 'Alfian Rosadi',
       role: 'Chief of Investment',
       image:'assets/Materi Website Mawaka/Foto Alfian Rosadi.png',
-      key: "ALFIAN_ROSALDI",
+      key: "ALFIAN_ROSADI",
       expanded: false
     },
     {
@@ -91,7 +94,7 @@ export class AboutUsComponent implements AfterViewInit {
       contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
-      type: "ALFIAN_ROSALDI",
+      type: "ALFIAN_ROSADI",
       active: false,
       contents: "As Chief of Investment at Mawaka Ventures. He studied at Gadjah Mada University majoring in a double degree: Master of Business Administration (MBA) and Wealth Management by CWMA. Before joining Mawaka Ventures, he served as Personal Wealth Manager at Valbury Asia Futures specializing in commodity trading and Contracts For Differences (CFD); Senior Relationship Manager at KB Bukopin Bank with a focus on providing credit to corporate; and Internal Control Manager at Trinusa Group, a company operating in the nickel mining industry.",
       education:[
@@ -124,9 +127,36 @@ export class AboutUsComponent implements AfterViewInit {
   isMobile=false;
   constructor(
     private ref: ChangeDetectorRef,
+    private route: ActivatedRoute
   )
   {
 
+  }
+  person: any;
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.name = params['name'] || null;
+
+      const scrollToPeoples = params['scrollToPeoples'] === 'true';
+      if (scrollToPeoples && this.peoplesSection) {
+        this.peoples[0].expanded=false
+        this.lists[0].active=false
+        if(this.name){
+          this.person= this.peoples.find(p => p.name === this.name)
+          if (this.person) {
+            this.person.expanded = true;  // Update expanded value to true
+            this.onClickType(this.person)
+          }
+
+        }
+
+        this.scrollToSection();
+      }
+    });
+  }
+  scrollToSection() {
+    this.peoplesSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
   ngAfterViewInit(): void {

@@ -53,4 +53,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['./portfolio'], {relativeTo: this.route})
   }
 
+  goToAboutUs(name: string) {
+    this.router.navigate(['/about-us'], { queryParams: { name: name, scrollToPeoples: true } });
+  }
+
 }

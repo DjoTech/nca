@@ -238,7 +238,7 @@
       </div>
     </div>
     <div class="row justify-content-between text-in-blue align-items-center">
-      <ng-container *ngFor="let people of peoples" id="peoples">
+      <ng-container *ngFor="let people of peoples">
         <div class="{{people.expanded ? 'col-md-3 expanded' : 'col-md-2' }} text-center">
           <div class="photo-container cursor-pointer {{ !people.expanded ? 'opacity-50' : '' }}"
                (click)="onClickType(people)">
@@ -251,7 +251,7 @@
         </div>
       </ng-container>
     </div>
-    <div class="row mt-5 text-in-blue">
+    <div class="row mt-5 text-in-blue" #peoplesSection id="peoples">
       <div class="col-md-4">
         <div class="photo-container">
           <img [src]="detail_people.image" alt="" class="w-100 rounded mb-3 img-thumbnail h-100">
