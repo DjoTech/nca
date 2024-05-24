@@ -156,7 +156,7 @@ export class AboutUsComponent implements AfterViewInit {
     });
   }
   scrollToSection() {
-    this.peoplesSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    this.peoplesSection.nativeElement.scrollIntoView();
   }
 
   ngAfterViewInit(): void {
