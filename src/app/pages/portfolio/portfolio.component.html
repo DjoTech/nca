@@ -5,25 +5,61 @@
         <h1 class="fw-bolder text-mawaka display-5"><span class="title pe-3">Our Portfolio</span></h1>
       </div>
     </div>
+
     <div class="row mt-3">
       <div class="col-md-12">
-        <ng-container *ngFor="let category of categories; let index = index">
-          <button
-            (click)="filter(category)"
-            class="btn rounded-5 m-1 fs-5 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>
-        </ng-container>
+        <p-carousel [value]="portfolios"
+                    [numVisible]="5"
+                    [numScroll]="5"
+                    [showIndicators]="true"
+                    [showNavigators]="true"
+                    [autoplayInterval]="2000"
+                    [responsiveOptions]="responsiveOptions">
+          <ng-template let-portfolio pTemplate="item">
+            <a class="card border-0 mx-1 h-100 text-decoration-none" href="{{ portfolio.link }}" target="_blank">
+              <img src="{{ portfolio.image }}" alt="{{ portfolio.name }}"
+                   class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain d-block mx-auto" style="height: 200px !important; width: 200px !important;">
+              <div class="card-body">
+                <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
+              </div>
+            </a>
+          </ng-template>
+        </p-carousel>
       </div>
     </div>
-    <div class="row p-md-3 row-cols-md-4 g-4">
-      <div class="col" *ngFor="let portfolio of data">
-        <a class="card rounded-5 h-100 text-decoration-none" href="{{ portfolio.link }}" target="_blank">
-            <img src="{{ portfolio.image }}" alt="{{ portfolio.name }}" class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain" style="height: 75%;">
-          <div class="card-body">
-            <h6 class="fw-bolder fs-5">{{ portfolio.name }}</h6>
-          </div>
-        </a>
-      </div>
-    </div>
+
+
+<!--    <div class="row mt-3">-->
+<!--      <div class="col-md-12 text-center">-->
+<!--        <ng-container *ngFor="let category of categories; let index = index">-->
+<!--          <button-->
+<!--            (click)="filter(category)"-->
+<!--            class="btn m-1 fs-5 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>-->
+<!--        </ng-container>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--    FIGMA-->
+<!--    <div class="row mt-3">-->
+<!--      <div class="col-md-12">-->
+<!--        <ng-container *ngFor="let category of categories; let index = index">-->
+<!--          <button-->
+<!--            (click)="filter(category)"-->
+<!--            class="btn rounded-5 m-1 fs-5 {{ selected === category.category_id ? 'text-mawaka border-color-mawaka fw-bold bg-mawaka-light' : 'border-gray border-2 text-gray' }}">{{ category.category_name }}</button>-->
+<!--        </ng-container>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row p-md-3 row-cols-md-4 g-4">-->
+<!--      <div class="col" *ngFor="let portfolio of data">-->
+<!--        <a class="card rounded-5 h-100 text-decoration-none" href="{{ portfolio.link }}" target="_blank">-->
+<!--            <img src="{{ portfolio.image }}" alt="{{ portfolio.name }}" class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain" style="height: 75%;">-->
+<!--          <div class="card-body">-->
+<!--            <h6 class="fw-bolder fs-5">{{ portfolio.name }}</h6>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
   </section>
 </div>
 

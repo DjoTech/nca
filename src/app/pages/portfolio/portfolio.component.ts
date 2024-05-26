@@ -1,17 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  styleUrls: ['./portfolio.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioComponent implements OnInit{
 
   categories = [
-    {
-      category_id: null,
-      category_name: "All Category"
-    },
+    // {
+    //   category_id: null,
+    //   category_name: "All Category"
+    // },
     {
       category_id: 1,
       category_name: "Construction"
@@ -89,16 +90,60 @@ export class PortfolioComponent implements OnInit{
 
   data = this.portfolios
 
-  selected = null;
+  selected = 1;
 
   currentPath = '';
   isHomePage = true;
+
+
+  responsiveOptions: any[] | undefined;
+
+  currentIndex = 0;
+
 
   constructor() {
   }
 
   ngOnInit() {
     this.checkRouter()
+
+    this.responsiveOptions = [
+      // {
+      //   breakpoint: '1400px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // },
+      // {
+      //   breakpoint: '1220px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // },
+      // {
+      //   breakpoint: '1100px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // }
+      {
+        breakpoint: '1920px',
+        numVisible: 5,
+        numScroll: 1
+      },
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ];
   }
 
   filter(item: any) {

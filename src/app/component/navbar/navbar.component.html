@@ -1,18 +1,18 @@
 <div class="container-fluid {{ isHomepage ? 'position-absolute' : '' }}"
      style="background-image: url('assets/home/bg-home.png'); background-position: center; background-position-y: -1000px; background-repeat: no-repeat;">
-  <nav class="navbar navbar-expand-lg row justify-content-space bg-gray" style="{{ isHomepage ? 'opacity: 0.7;' : '' }}">
+  <nav class="navbar navbar-expand-md row bg-gray align-items-center" style="{{ isHomepage ? 'opacity: 0.7;' : '' }}">
     <div class="col-md-4">
-      <a routerLink="home" class="nav-link text-mawaka fs-5 {{ currentPath === '/home' || currentPath ==='/mawaka-venture/home' ? 'fw-bolder' : '' }}"><img src="assets/Materi Website Mawaka/logo-mawaka-dark.png" alt="" height="50"></a>
+      <img src="assets/Materi Website Mawaka/logo-mawaka-dark.png" class="cursor-pointer" alt="" height="50" routerLink="home">
       <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
     <div class="col-md-8">
-      <div class="collapse navbar-collapse fw-bolder row flex-wrap mx-3" id="navbarText">
-        <div class="navbar-nav me-auto mb-2 mb-lg-0">
-          <div class="col-md-2 nav-item"></div>
+      <div class="collapse navbar-collapse fw-bolder row flex-wrap" id="navbarText">
+        <div class="navbar-nav text-center">
+          <div class="col-md-2"></div>
           <!-- <div class="col-md-2 nav-item"><a routerLink="home" class="nav-link text-mawaka fs-5 {{ currentPath === '/home' || currentPath ==='/mawaka-venture/home' ? 'fw-bolder' : '' }}">Home</a></div> -->
-          <div class="col-md-2 nav-item"><a routerLink="about-us" class="nav-link text-mawaka fs-5 {{ currentPath === '/about-us' || currentPath === '/mawaka-venture/about-us' ? 'fw-bolder' : '' }}">About Us</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="about-us/Ridho Singgih" class="nav-link text-mawaka fs-5 {{ currentPath === '/about-us' || currentPath === '/mawaka-venture/about-us' ? 'fw-bolder' : '' }}">About Us</a></div>
           <div class="col-md-2 nav-item"><a routerLink="portfolio" class="nav-link text-mawaka fs-5 {{ currentPath === '/portfolio' || currentPath === '/mawaka-venture/portfolio' ? 'fw-bolder' : '' }}">Portfolio</a></div>
           <div class="col-md-2 nav-item"><a routerLink="strategy" class="nav-link text-mawaka fs-5 {{ currentPath === '/strategy' || currentPath === '/mawaka-venture/strategy' ? 'fw-bolder' : '' }}">Strategy</a></div>
           <div class="col-md-2 nav-item"><a routerLink="contact-us" class="nav-link text-mawaka fs-5 {{ currentPath === '/contact-us' || currentPath === '/mawaka-venture/contact-us' ? 'fw-bolder' : '' }}">Contact Us</a></div>

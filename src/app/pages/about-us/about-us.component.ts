@@ -17,7 +17,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./about-us.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutUsComponent implements AfterViewInit {
+export class AboutUsComponent implements AfterViewInit, OnInit {
 
   name: string | null = null;
   @ViewChild('blueArrow') blueArrow: any;
@@ -130,31 +130,28 @@ export class AboutUsComponent implements AfterViewInit {
     private route: ActivatedRoute
   )
   {
-
   }
   person: any;
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.name = params['name'] || null;
+    this.route.paramMap.subscribe((params: any) => {
 
-      const scrollToPeoples = params['scrollToPeoples'] === 'true';
-      if (scrollToPeoples && this.peoplesSection) {
-        this.peoples[0].expanded=false
-        this.lists[0].active=false
-        if(this.name){
-          this.person= this.peoples.find(p => p.name === this.name)
-          if (this.person) {
-            this.person.expanded = true;  // Update expanded value to true
-            this.onClickType(this.person)
-          }
+      this.name = params['params']['name'] || null;
 
-        }
+      this.peoples[0].expanded=false
+      this.lists[0].active=false
 
+      this.person= this.peoples.find(p => p.name === this.name)
+
+      if (this.person) {
+        this.person.expanded = true;  // Update expanded value to true
+        this.onClickType(this.person)
         this.scrollToSection();
+
       }
     });
   }
+
   scrollToSection() {
     this.peoplesSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
@@ -202,6 +199,8 @@ export class AboutUsComponent implements AfterViewInit {
     if (newCategory === 'mobile' || newCategory === 'tablet') {
       this.blueArrow.nativeElement.src = 'assets/Arrow_blue_mobile.png'
       this.greenArrow.nativeElement.src = 'assets/Arrow_green.png';
+      this.blueArrow.nativeElement.classList.add('mb-5')
+      this.greenArrow.nativeElement.classList.add('mb-5')
       this.isMobile=true
       this.ref.detectChanges();
       return;
@@ -209,6 +208,8 @@ export class AboutUsComponent implements AfterViewInit {
 
     this.blueArrow.nativeElement.src = 'assets/about-us-1.png'
     this.greenArrow.nativeElement.src = 'assets/about-us-2.png'
+    this.blueArrow.nativeElement.classList.remove('mb-5')
+    this.greenArrow.nativeElement.classList.remove('mb-5')
     this.isMobile=false
     this.ref.detectChanges();
   }

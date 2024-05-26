@@ -51,9 +51,7 @@ export class FooterComponent implements AfterViewInit{
 
     if (newCategory === 'mobile' || newCategory === 'tablet') {
       // @ts-ignore
-      bgFooter2.classList.remove('bg-footer-2')
-      // @ts-ignore
-      bgFooter2.classList.add('bg-black')
+      bgFooter2.classList.add('darken')
 
       // @ts-ignore
       mawakaName.classList.remove('text-start')
@@ -78,9 +76,7 @@ export class FooterComponent implements AfterViewInit{
     mawakaLogo.classList.add('text-end')
 
     // @ts-ignore
-    bgFooter2.classList.remove('bg-black')
-    // @ts-ignore
-    bgFooter2.classList.add('bg-footer-2')
+    bgFooter2.classList.remove('darken')
 
     this.ref.detectChanges();
   }

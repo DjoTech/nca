@@ -21,3 +21,10 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.darken {
+  filter: brightness(40%);
+  background-image: url('../../../assets/footer-darken.png');
+  background-position: -100px center;
+  background-repeat: no-repeat;
+}

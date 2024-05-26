@@ -2,14 +2,14 @@
            style="background-image: url('assets/home/bg-home.png'); background-position: center; background-position-y: -1000px; background-repeat: no-repeat; height: 95vh;">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-1">Unlocking the Potential of Southeast Asia</h1>
-        <h3 class="mt-3 fw-normal">
+        <h2 class="fw-bolder home-title">Unlocking the Potential of Southeast Asia</h2>
+        <h3 class="mt-3 fw-normal subtitle">
           Mawaka Venture is a boutique private equity firm with a deep understanding of Southeast Asia's unique market dynamics. <br>
           We leverage our expertise and network to identify and invest in the region's most innovative and high-growth businesses.
         </h3>
-        <a class="btn border border-2 rounded-5 text-white mt-3 p-md-3" style="width: 10rem" routerLink="../about-us">
+        <button id="btnLearnMore" #btnLearnMore class="btn border border-2 rounded-5 text-white mt-3 p-md-3" routerLink="../about-us">
           Learn More <i class="bi bi-arrow-right"></i>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -26,39 +26,70 @@
           </p>
         </div>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 g-3">
-        <ng-container *ngFor="let person of persons">
-          <div class="col-md-4">
-            <div class="card h-100 border-0">
-              <div class="card-body">
-                <div class="bg-white rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden text-center" style="height: 75% !important;">
-                  <img id="person" src="{{ person.image }}" alt="{{ person.name }}" style="width: 90% !important; cursor:pointer ;" class="object-fit-cover h-100" (click)="goToAboutUs(person.name)">
-                </div>
-                <div class="text-center mt-3">
-                  <h4 class="fw-bolder">{{ person.name }}</h4>
-                  <h4 class="fw-normal">{{ person.position }}</h4>
-                </div>
-              </div>
+
+      <p-carousel [value]="persons"
+                  [numVisible]="5"
+                  [numScroll]="5"
+                  [showIndicators]="true"
+                  [showNavigators]="true"
+                  [autoplayInterval]="2000"
+                  [responsiveOptions]="responsiveOptions">
+        <ng-template let-person pTemplate="item">
+          <a
+            class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
+            href="../about-us/{{ person.name }}"
+            (click)="profile(person.name)">
+            <img src="{{ person.image }}"
+                 [alt]="person.name"
+                 style="height: 200px !important; width: 200px !important;"
+                 class="object-fit-cover card-img-top mx-auto d-block"/>
+            <div class="card-body text-start">
+              <h4 class="card-title fs-5">{{ person.name }}</h4>
+              <p class="card-text-3 mt-3">{{ person.position }}</p>
             </div>
-          </div>
-        </ng-container>
-        <div class="col-md-4 " >
-          <div class="card h-100 border-0">
-            <div class="card-body">
-              <div
-                style="height: 75% !important; width: 50%; background-image: url('assets/find-out-more.png'); background-size: cover"
-                class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5">
-                <a routerLink="../portfolio" class="nav-link border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light">
-                  Find Out More <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-              <h4 class="text-center">
-                <span class="fw-bolder"></span><br>
-              </h4>
+            <div class="card-footer bg-white border-0">
+              <span class="btn card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
             </div>
-          </div>
-        </div>
-      </div>
+          </a>
+        </ng-template>
+      </p-carousel>
+
+
+
+<!--      FIGMA-->
+<!--      <div class="row row-cols-1 row-cols-md-2 g-3">-->
+<!--        <ng-container *ngFor="let person of persons">-->
+<!--          <div class="col-md-4">-->
+<!--            <div class="card h-100 border-0">-->
+<!--              <div class="card-body">-->
+<!--                <div class="bg-white rounded-5 pt-md-5 pe-md-5 ps-md-5 overflow-hidden text-center" style="height: 75% !important;">-->
+<!--                  <img id="person" src="{{ person.image }}" alt="{{ person.name }}" style="width: 90% !important; cursor:pointer ;" class="object-fit-cover h-100" (click)="goToAboutUs(person.name)">-->
+<!--                </div>-->
+<!--                <div class="text-center mt-3">-->
+<!--                  <h4 class="fw-bolder">{{ person.name }}</h4>-->
+<!--                  <h4 class="fw-normal">{{ person.position }}</h4>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </ng-container>-->
+<!--        <div class="col-md-4">-->
+<!--          <div class="card h-100 border-0">-->
+<!--            <div class="card-body">-->
+<!--              <div-->
+<!--                style="height: 75% !important; width: 50%; background-image: url('assets/find-out-more.png'); background-size: cover"-->
+<!--                class="w-100 text-center d-flex align-items-center justify-content-center h-100 align-middle bg-mawaka-light-secondary rounded-5 p-md-5">-->
+<!--                <a routerLink="../portfolio" class="nav-link border-color-mawaka rounded-5 p-md-3 w-75 bg-white text-mawaka bg-mawaka-light">-->
+<!--                  Find Out More <i class="bi bi-arrow-right"></i>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <h4 class="text-center">-->
+<!--                <span class="fw-bolder"></span><br>-->
+<!--              </h4>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
     </section>
   </div>
 
