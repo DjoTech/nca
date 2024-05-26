@@ -19,6 +19,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutUsComponent implements AfterViewInit, OnInit {
 
+  responsiveOptions: any[] | undefined;
   name: string | null = null;
   @ViewChild('blueArrow') blueArrow: any;
   @ViewChild('greenArrow') greenArrow: any;
@@ -32,35 +33,62 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
       role: 'Managing Partner & CEO',
       image:'assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png',
       key: "RIDHO_SINGGIH",
-      expanded: true
+      expanded: true,
+      contents: "Ridho Singgih is a seasoned professional with a multifaceted background in business strategy, marketing, and service management. Graduating from the prestigious Business School at Bandung Institute of Technology, Ridho embarked on a dynamic career journey that encompassed diverse roles and industries. With three years of experience at MarkPlus Consulting, specializing in marketing, strategy management, and service management, Ridho honed skills critical for navigating complex business landscapes. Transitioning to the burgeoning e-commerce sector, Ridho spent three years at a top leading platform, gaining insights into digital commerce and operational efficiency. Following this, Ridho led a telecommunication construction company for nearly five years, demonstrating exceptional leadership as a business owner. Additionally, Ridho is an active member of the Indonesia Marketing Association, contributing to the advancement of marketing practices and industry knowledge. As a Co-Founder of Mawaka Ventures, Ridho leverages this wealth of experience to drive strategic investment and foster sustainable growth for clients and partners.",
+      education:[
+        'assets/education-itb.webp'
+      ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       name: 'Handy Setianto',
       role: 'Managing Partner & CIO',
       image:'assets/Materi Website Mawaka/Foto Handy Setianto.png',
       key: "HANDY_SETIANTO",
-      expanded: false
+      expanded: false,
+      contents: this.placeholder,
+      education:[
+
+      ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       name: 'Edgar Handoko',
       role: 'Chief of Internal Affairs & Compliance',
       image:'assets/Materi Website Mawaka/Foto Edgar Handoko.png',
       key: "EDGAR_HANDOKO",
-      expanded: false
+      expanded: false,
+      contents: "As the Chief of Internal Affairs & Compliance of Mawaka Ventures, Edgar Handoko takes pride in providing the best yet fast services to Mawaka’s internal affairs and its clients which consist of legal services, human resources compliances, licences regulatory overview, internal and external due diligence, and many others. With more than 6 years of experiences, Edgar has been involved in various corporate legal transactions and dispute resolution where he has represented numerous Indonesian and international company. To maximize his quality services, Edgar has advanced attorney’s licenses such as: (i) Receiver and Administrator licensed under the Indonesian Association of Receiver and Administrator, (ii) Tax Attorneys licensed under the Tax Court of the Republic Indonesia, and (ii) Mediator licensed under the Jakarta District Courts.       ",
+      education:[
+        "assets/Materi Website Mawaka/logo-ugm.png",
+        "assets/Materi Website Mawaka/logo ui.png"
+      ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       name: 'Alfian Rosadi',
       role: 'Chief of Investment',
       image:'assets/Materi Website Mawaka/Foto Alfian Rosadi.png',
       key: "ALFIAN_ROSADI",
-      expanded: false
+      expanded: false,
+      contents: "As Chief of Investment at Mawaka Ventures. He studied at Gadjah Mada University majoring in a double degree: Master of Business Administration (MBA) and Wealth Management by CWMA. Before joining Mawaka Ventures, he served as Personal Wealth Manager at Valbury Asia Futures specializing in commodity trading and Contracts For Differences (CFD); Senior Relationship Manager at KB Bukopin Bank with a focus on providing credit to corporate; and Internal Control Manager at Trinusa Group, a company operating in the nickel mining industry.",
+      education:[
+        "assets/Materi Website Mawaka/logo-ugm.png"
+      ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     },
     {
       name: 'Naufal Aji',
       role: 'Chief of Investment',
       image:'assets/Materi Website Mawaka/Foto Naufal Aji.png',
       key: "NAUFAL_AJI",
-      expanded: false
+      expanded: false,
+      contents: "As the Chief of Investment Officer of Mawaka Ventures, Naufal Aji holds a Bachelor of Industrial Engineering from the University of Indonesia and a Master of Business Management from The University of Warwick. With more than five years of experience as a Management Consultant at Accenture and more than two years as a director of a fintech company at PT Finnet Indonesia, Naufal has honed his expertise in strategic investment and financial planning. His professional journey is complemented by his past involvement as a member of the Indonesian Students Association in London, highlighting his commitment to leadership and international collaboration.",
+      education:[
+        "assets/Materi Website Mawaka/logo ui.png",
+        "assets/Materi Website Mawaka/logo warwick.png"
+      ],
+      contact:'Dummy@gmail.com / +62 896 086 21566'
     }
   ];
 
@@ -134,6 +162,43 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
   person: any;
 
   ngOnInit() {
+    this.responsiveOptions = [
+      // {
+      //   breakpoint: '1400px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // },
+      // {
+      //   breakpoint: '1220px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // },
+      // {
+      //   breakpoint: '1100px',
+      //   numVisible: 1,
+      //   numScroll: 1
+      // }
+      {
+        breakpoint: '1920px',
+        numVisible: 5,
+        numScroll: 1
+      },
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 1,
+        numScroll: 1
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1
+      }
+    ];
     this.route.paramMap.subscribe((params: any) => {
 
       this.name = params['params']['name'] || null;
@@ -164,6 +229,15 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
     const width = window.innerWidth;
     const category = this.getCategory(width);
     this.handleResizeChange(category)
+  }
+
+  onPageChange(item: any) {
+    if (this.peoples[item.page] === undefined) {
+      this.person = this.peoples[0]
+    } else {
+      this.person = this.peoples[item.page]
+    }
+    this.ref.detectChanges();
   }
 
   onClickType(item: any): void {
@@ -211,6 +285,7 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
     this.blueArrow.nativeElement.classList.remove('mb-5')
     this.greenArrow.nativeElement.classList.remove('mb-5')
     this.isMobile=false
+    this.person = this.peoples[0]
     this.ref.detectChanges();
   }
 
