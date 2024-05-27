@@ -27,32 +27,34 @@
         </div>
       </div>
 
-      <p-carousel [value]="persons"
-                  [numVisible]="5"
-                  [numScroll]="5"
-                  [showIndicators]="true"
-                  [showNavigators]="true"
-                  [autoplayInterval]="2000"
-                  [responsiveOptions]="responsiveOptions">
-        <ng-template let-person pTemplate="item">
-          <a
-            class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
-            href="../about-us/{{ person.name }}"
-            (click)="profile(person.name)">
-            <img src="{{ person.image }}"
-                 [alt]="person.name"
-                 style="height: 200px !important; width: 200px !important;"
-                 class="object-fit-cover card-img-top mx-auto d-block"/>
-            <div class="card-body text-start">
-              <h4 class="card-title fs-5">{{ person.name }}</h4>
-              <p class="card-text-3 mt-3">{{ person.position }}</p>
-            </div>
-            <div class="card-footer bg-white border-0">
-              <span class="btn card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
-            </div>
-          </a>
-        </ng-template>
-      </p-carousel>
+      <div class="row">
+        <div class="col-md-12">
+          <p-carousel [value]="persons"
+                      [showIndicators]="persons.length > 5"
+                      [showNavigators]="persons.length > 5 || isMobile"
+                      [autoplayInterval]="2000"
+                      [responsiveOptions]="responsiveOptions">
+            <ng-template let-person pTemplate="item">
+              <a
+                class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
+                href="../about-us/{{ person.name }}"
+                (click)="profile(person.name)">
+                <img src="{{ person.image }}"
+                     [alt]="person.name"
+                     style="height: 200px !important; width: 200px !important;"
+                     class="object-fit-cover card-img-top mx-auto d-block"/>
+                <div class="card-body text-start">
+                  <h4 class="card-title fs-5">{{ person.name }}</h4>
+                  <p class="card-text-3 mt-3">{{ person.position }}</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <span class="btn card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
+                </div>
+              </a>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </div>
 
 
 

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,6 +7,15 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioComponent implements OnInit{
+
+  private mobileBreakpoint = 768; // Max width for mobile view
+  private tabletBreakpoint = 992; // Max width for tablet view
+
+  // Initial screen size category
+  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
+
+  isMobile = false
+
 
   categories = [
     // {
@@ -88,62 +97,44 @@ export class PortfolioComponent implements OnInit{
     // },
   ]
 
-  data = this.portfolios
+  data = this.portfolios.filter(i => i.category_id === 1)
 
   selected = 1;
 
   currentPath = '';
   isHomePage = true;
 
+  responsiveOptions = [
+    {
+      breakpoint: '1920px',
+      numVisible: 5,
+      numScroll: 1
+    },
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
 
-  responsiveOptions: any[] | undefined;
-
-  currentIndex = 0;
-
-
-  constructor() {
+  constructor(
+    private ref: ChangeDetectorRef,
+  ) {
   }
 
   ngOnInit() {
     this.checkRouter()
-
-    this.responsiveOptions = [
-      // {
-      //   breakpoint: '1400px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1220px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1100px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // }
-      {
-        breakpoint: '1920px',
-        numVisible: 5,
-        numScroll: 1
-      },
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ];
+    this.windowCheck();
   }
 
   filter(item: any) {
@@ -153,11 +144,59 @@ export class PortfolioComponent implements OnInit{
     } else {
       this.data = this.portfolios
     }
+    this.ref.detectChanges()
   }
 
   checkRouter() {
     this.currentPath = location.pathname
     this.isHomePage = (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home')
+  }
+
+  windowCheck() {
+    const width = window.innerWidth;
+    const category = this.getCategory(width);
+    this.handleResizeChange(category)
+  }
+
+  private getCategory(width: number): 'mobile' | 'tablet' | 'desktop' {
+    if (width < this.mobileBreakpoint) {
+      return 'mobile';
+    } else if (width < this.tabletBreakpoint) {
+      return 'tablet';
+    } else {
+      return 'desktop';
+    }
+  }
+
+  private handleResizeChange(newCategory: 'mobile' | 'tablet' | 'desktop') {
+    // console.log(`Screen size category changed to: ${newCategory}`);
+    // Implement any other logic needed when the screen size category changes
+    // For example, you could adjust layout, reload components, etc.
+
+    if (newCategory === 'mobile' || newCategory === 'tablet') {
+      this.isMobile = true;
+      this.ref.detectChanges();
+      return;
+    }
+
+    this.isMobile = false;
+    this.ref.detectChanges();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any = null) {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // console.log(`Window resized to width: ${width}, height: ${height}`);
+
+    // Get the new screen size category
+    const newCategory = this.getCategory(width);
+
+    // Perform actions if the category changes
+    if (newCategory !== this.currentCategory) {
+      this.currentCategory = newCategory;
+      this.handleResizeChange(newCategory);
+    }
   }
 
 }

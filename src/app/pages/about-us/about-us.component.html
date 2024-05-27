@@ -37,7 +37,7 @@
       </div>
       <div class="row mt-5 justify-content-center align-items-center">
         <div class="col-md-1 my-3 " [ngClass]="{'centered': isMobile}">
-          <img id="blueArrow" #blueArrow [src]=blue_arrow alt="">
+          <img id="blueArrow" #blueArrow src="assets/about-us-1.png" alt="">
         </div>
         <div class="col-md-8 p-md-5 bg-green-mawaka text-light rounded-4 fs-5">
           <p class="mt-3"><span class="fw-bolder text-green-mawaka p-md-3 rounded-3 bg-white">Wa</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Wacika</span></p>
@@ -52,7 +52,7 @@
       </div>
       <div class="row mt-5 justify-content-end align-items-center">
         <div class="col-md-1 my-3" [ngClass]="{'centered': isMobile}">
-          <img id="greenArrow" #greenArrow [src]=green_arrow alt="">
+          <img id="greenArrow" #greenArrow src="assets/about-us-2.png" alt="">
         </div>
         <div class="col-md-8 p-md-5 bg-blue-mawaka text-light rounded-4 fs-5">
           <p class="mt-3"><span class="fw-bolder text-blue-mawaka p-md-3 rounded-3 bg-white">Ka</span>&nbsp;<i class="bi bi-dash-lg"></i>&nbsp;<span class="fst-italic">Kayika</span></p>
@@ -277,7 +277,6 @@
     <ng-container *ngIf="isMobile">
       <p-carousel [value]="peoples"
                   (onPage)="onPageChange($event)"
-                  #peoplesSection
                   [numVisible]="5"
                   [numScroll]="5"
                   [showIndicators]="false"

@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-// @ts-ignore
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
@@ -19,11 +18,34 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutUsComponent implements AfterViewInit, OnInit {
 
-  responsiveOptions: any[] | undefined;
+  @ViewChild('blueArrow') blueArrow!: ElementRef;
+  @ViewChild('greenArrow') greenArrow!: ElementRef;
+  @ViewChild('peoplesSection') peoplesSection!: ElementRef;
+
+  responsiveOptions = [
+    {
+      breakpoint: '1920px',
+      numVisible: 5,
+      numScroll: 1
+    },
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ]
+
   name: string | null = null;
-  @ViewChild('blueArrow') blueArrow: any;
-  @ViewChild('greenArrow') greenArrow: any;
-  @ViewChild('peoplesSection', { static: true }) peoplesSection!: ElementRef;
 
   placeholder = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci beatae blanditiis, consequatur doloremque eaque eos ex fugit id illo incidunt ipsum minus nesciunt nihil nostrum odio optio placeat quaerat quia repellendus rerum sunt voluptatibus. Distinctio, dolores ea eum hic impedit iste libero, non odio porro quae quas quasi quidem quos repellendus sit soluta veniam vero. Accusamus aliquam blanditiis cum exercitationem illum ipsam iusto labore libero magni modi nulla officiis omnis qui quibusdam sint, temporibus velit veniam voluptatum? Architecto commodi consequatur deleniti earum fugiat, iste itaque iusto maiores maxime nemo nesciunt nobis odio, qui quia sapiente ut veniam voluptatibus!"
 
@@ -150,56 +172,29 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
 
   contents: any = this.lists[0]
   detail_people : any = this.peoples[0]
-  blue_arrow = "assets/about-us-1.png"
-  green_arrow = "assets/about-us-2.png"
   isMobile=false;
+
+  person: any;
+
   constructor(
     private ref: ChangeDetectorRef,
     private route: ActivatedRoute
   )
   {
   }
-  person: any;
 
   ngOnInit() {
-    this.responsiveOptions = [
-      // {
-      //   breakpoint: '1400px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1220px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1100px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // }
-      {
-        breakpoint: '1920px',
-        numVisible: 5,
-        numScroll: 1
-      },
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ];
+  }
+
+  ngAfterViewInit(): void {
+    this.windowCheck();
+    this.getParams();
+  }
+
+  getParams(): void {
     this.route.paramMap.subscribe((params: any) => {
+
+      this.scrollToTop();
 
       this.name = params['params']['name'] || null;
 
@@ -212,17 +207,19 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
         this.person.expanded = true;  // Update expanded value to true
         this.onClickType(this.person)
         this.scrollToSection();
-
+        this.ref.detectChanges();
       }
     });
   }
 
-  scrollToSection() {
-    this.peoplesSection.nativeElement.scrollIntoView();
+  scrollToTop(): void  {
+    window.scroll({top: 0, left: 0, behavior: 'smooth'});
+    this.ref.detectChanges();
   }
 
-  ngAfterViewInit(): void {
-    this.windowCheck();
+  scrollToSection() {
+    this.peoplesSection.nativeElement.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+    this.ref.detectChanges();
   }
 
   windowCheck() {
@@ -246,6 +243,7 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
     this.detail_people = this.peoples.find(key => key.key === item.key)
     this.ref.detectChanges()
   }
+
   expandItem(item: any) {
     item.expanded = true;
   }

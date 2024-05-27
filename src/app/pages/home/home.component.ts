@@ -70,11 +70,30 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   ]
 
 
-  responsiveOptions: any[] | undefined;
+  responsiveOptions = [
+    {
+      breakpoint: '1920px',
+      numVisible: 5,
+      numScroll: 5
+    },
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
 
-
-  currentIndex = 0;
-
+  isMobile = false;
 
   constructor(
     private router: Router,
@@ -84,43 +103,6 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnInit(): void {
-    this.responsiveOptions = [
-      // {
-      //   breakpoint: '1400px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1220px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // },
-      // {
-      //   breakpoint: '1100px',
-      //   numVisible: 1,
-      //   numScroll: 1
-      // }
-      {
-        breakpoint: '1920px',
-        numVisible: 5,
-        numScroll: 1
-      },
-      {
-        breakpoint: '1199px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '991px',
-        numVisible: 1,
-        numScroll: 1
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1
-      }
-    ];
 
   }
 
@@ -160,6 +142,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
       btnLearnMore.classList.add('btn-sm')
       // @ts-ignore
       btnLearnMore.classList.remove('p-md-3')
+      this.isMobile = true;
       this.ref.detectChanges();
       return;
     }
@@ -167,7 +150,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
     btnLearnMore.classList.remove('btn-sm')
     // @ts-ignore
     btnLearnMore.classList.add('p-md-3')
-
+    this.isMobile = false;
     this.ref.detectChanges();
   }
 
