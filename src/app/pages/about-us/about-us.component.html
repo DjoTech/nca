@@ -234,7 +234,7 @@
   <section class="container py-5 pt-md-5" >
     <div class="row mt-5 mb-5 justify-content-center">
       <div class="col-md-3 text-center">
-        <h1 class="fw-bolder text-in-blue display-5 title-dark" id="peoples" #peoplesSection>Our People</h1>
+        <h1 class="fw-bolder text-in-blue display-5 title-dark">Our People</h1>
       </div>
     </div>
 
@@ -253,7 +253,7 @@
           </div>
         </ng-container>
       </div>
-      <div class="row mt-5 text-in-blue p-md-3">
+      <div class="row mt-5 text-in-blue p-md-3" id="peoples" #peoplesSection>
 
         <div class="col-md-4">
           <div class="photo-container">
@@ -264,8 +264,8 @@
           <h3 class="fw-bolder mt-3">{{detail_people.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> {{detail_people.role}}</small></h3>
           <p class="text-justify mt-3">{{contents.contents}}</p>
           <p class="fw-bold mt-3">Contact me : {{contents.contact}}</p>
-          <p class="fw-bold mt-3">Education</p>
-          <ng-container *ngFor="let education of contents.education">
+          <p class="fw-bold mt-3" >Education</p>
+          <ng-container *ngFor="let education of contents.education" >
             <img [src]="education" class="img-thumbnail me-2" style="height: 80px;" alt="">
           </ng-container>
 
@@ -281,10 +281,11 @@
                   [numScroll]="5"
                   [showIndicators]="false"
                   [showNavigators]="true"
-                  [responsiveOptions]="responsiveOptions">
-        <ng-template let-person pTemplate="item">
-          <div class="card border-0 mx-1 h-100 text-decoration-none">
-            <img [src]="person.image" [alt]="person.name"
+                  [responsiveOptions]="responsiveOptions"
+                  [page]=first_person_carousel>
+        <ng-template let-person pTemplate="item" >
+          <div class="card border-0 mx-1 h-100 text-decoration-none" id="peoples" #peoplesSection>
+            <img [src]="person?.image" [alt]="person?.name"
                  class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain d-block mx-auto" style="height: 200px !important; width: 200px !important;">
           </div>
         </ng-template>
@@ -292,13 +293,13 @@
       <div class="row text-white mt-3">
         <div class="col-md-12">
           <div class="card-body text-center">
-            <h3 class="card-title fs-5">{{ person.name }}</h3>
-            <p class="card-text mt-3 fs-6">{{ person.role }}</p>
+            <h3 class="card-title fs-5">{{ person?.name }}</h3>
+            <p class="card-text mt-3 fs-6">{{ person?.role }}</p>
           </div>
-          <p class="text-justify mt-3">{{ person.contents }}</p>
-          <p class="fw-bold mt-3">Contact me : {{ person.contact }}</p>
+          <p class="text-justify mt-3" >{{ person?.contents }}</p>
+          <p class="fw-bold mt-3">Contact me : {{ person?.contact }}</p>
           <p class="fw-bold mt-3">Education</p>
-          <ng-container *ngFor="let education of person.education">
+          <ng-container *ngFor="let education of person?.education">
             <img [src]="education" class="img-thumbnail me-2" style="height: 80px;" alt="">
           </ng-container>
         </div>

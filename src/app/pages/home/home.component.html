@@ -37,7 +37,7 @@
             <ng-template let-person pTemplate="item">
               <a
                 class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
-                href="../about-us/{{ person.name }}"
+                href="../about-us?name={{ person.name }}&scrollToPeoples=true"
                 (click)="profile(person.name)">
                 <img src="{{ person.image }}"
                      [alt]="person.name"

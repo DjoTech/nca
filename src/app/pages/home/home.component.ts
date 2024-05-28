@@ -32,32 +32,32 @@ export class HomeComponent implements OnInit, AfterViewInit  {
 
   persons = [
     {
-      name: "Ridho Singgih",
-      position: "Managing Partner & CEO",
+      name: "Ridho Singgih Setiawan",
+      position: "Founding Partner",
       image: "assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png",
       active: true,
     },
     {
       name: "Handy Setianto",
-      position: "Managing Partner & CIO",
+      position: "Managing Partner",
       image: "assets/Materi Website Mawaka/Foto Handy Setianto.png",
       active: true,
     },
     {
       name: "Edgar Handoko",
-      position: "Chief of Internal Affairs & Compliance",
+      position: "Managing Director of Compliance and Operations",
       image: "assets/Materi Website Mawaka/Foto Edgar Handoko.png",
       active: true,
     },
     {
       name: "Alfian Rosadi",
-      position: "Chief of Investment",
+      position: "Chief Financial Officer",
       image: "assets/Materi Website Mawaka/Foto Alfian Rosadi.png",
       active: true,
     },
     {
       name: "Naufal Aji",
-      position: "Chief of Investment",
+      position: "Chief of Investment Officer",
       image: "assets/Materi Website Mawaka/Foto Naufal Aji.png",
       active: true,
     },

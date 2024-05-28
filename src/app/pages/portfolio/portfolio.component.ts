@@ -18,10 +18,10 @@ export class PortfolioComponent implements OnInit{
 
 
   categories = [
-    // {
-    //   category_id: null,
-    //   category_name: "All Category"
-    // },
+    {
+      category_id: null,
+      category_name: "All Category"
+    },
     {
       category_id: 1,
       category_name: "Construction"
@@ -85,6 +85,12 @@ export class PortfolioComponent implements OnInit{
       link: "https://baracklegal.com",
       category_id: 5,
     },
+    {
+      name: "Panca Hijau",
+      image: "assets/Materi Website Mawaka/logo panca hijau.svg",
+      link: "https://pancahijau.com",
+      category_id: 3,
+    },
     // {
     //   name: "PT. Finnet Indonesia",
     //   image: "assets/Materi Website Mawaka/Logo Finnet.svg",
@@ -97,9 +103,13 @@ export class PortfolioComponent implements OnInit{
     // },
   ]
 
-  data = this.portfolios.filter(i => i.category_id === 1)
+  // data = this.portfolios.filter(i => i.category_id === 1)
 
-  selected = 1;
+  // selected = 1;
+
+  data = this.portfolios
+
+  selected = null;
 
   currentPath = '';
   isHomePage = true;
