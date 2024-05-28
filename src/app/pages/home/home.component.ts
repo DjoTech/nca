@@ -8,11 +8,6 @@ import {
 } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
-interface Person {
-  name: string;
-  image: string;
-  position: string;
-}
 
 @Component({
   selector: 'app-home',
@@ -104,10 +99,6 @@ export class HomeComponent implements OnInit, AfterViewInit  {
 
   ngOnInit(): void {
 
-  }
-
-  profile(name: string) {
-    this.router.navigate([`./about-us/${name}`], {relativeTo: this.route})
   }
 
   ngAfterViewInit(): void {

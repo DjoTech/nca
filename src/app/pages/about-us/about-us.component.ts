@@ -209,7 +209,6 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
 
   getParams(): void {
     this.route.queryParams.subscribe(params => {
-      console.log(params)
       this.scrollToTop();
       this.name = params['name'] || null;
 
@@ -237,7 +236,6 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
             this.onClickType(this.person)
             this.onPageChange(this.person_index)
             this.first_person_carousel =this.person_index.page
-            console.log(this.first_person_carousel)
             this.ref.detectChanges();
             setTimeout(() => this.scrollToSection(), 0);
           }
@@ -279,16 +277,12 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
   }
 
   windowCheck() {
-    console.log('window check')
     const width = window.innerWidth;
     const category = this.getCategory(width);
-    console.log(category)
     this.handleResizeChange(category)
-    console.log('handleResizeChange done')
   }
 
   onPageChange(item: any) {
-    console.log('item on page change',item)
     if (this.peoples[item.page] === undefined) {
       this.person = this.peoples[0]
     } else {
@@ -333,11 +327,8 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
       this.greenArrow.nativeElement.src = 'assets/Arrow_green.png';
       this.blueArrow.nativeElement.classList.add('mb-5')
       this.greenArrow.nativeElement.classList.add('mb-5')
-      console.log('1')
       this.isMobile=true
-      console.log('2')
       this.ref.detectChanges();
-      console.log('3')
       return;
     }
 
