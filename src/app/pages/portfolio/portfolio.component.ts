@@ -28,7 +28,7 @@ export class PortfolioComponent implements OnInit{
     },
     {
       category_id: 2,
-      category_name: "Telco - Infrastructure"
+      category_name: "Telecommunication"
     },
     {
       category_id: 3,
@@ -42,28 +42,28 @@ export class PortfolioComponent implements OnInit{
       category_id: 5,
       category_name: "Business Services"
     },
-    // {
-    //   category_id: 6,
-    //   category_name: "Fintech"
-    // },
+    {
+      category_id: 6,
+      category_name: "Waste Management"
+    },
   ]
 
   portfolios = [
     {
       name: "PT. Layton Enterprise",
-      image: "assets/Materi Website Mawaka/Logo Layton Enterprise.svg",
+      image: "assets/Materi Website Mawaka/logo layton baru.jpeg",
       link: "https://layton.co.id",
       category_id: 1,
     },
     {
       name: "PT. Multi Bmitra Sejahtera",
-      image: "assets/Materi Website Mawaka/Logo Multi Bmitra Sejahtera.svg",
+      image: "assets/Materi Website Mawaka/logo mbs baru.jpeg",
       link: "https://multibmitrasejahtera.com",
       category_id: 2,
     },
     {
       name: "PT. Profesional Internet Indonesia",
-      image: "assets/Materi Website Mawaka/Logo Pronet.png",
+      image: "assets/Materi Website Mawaka/logo pronet baru.png",
       link: "https://pronet.id",
       category_id: 2,
     },
@@ -74,7 +74,7 @@ export class PortfolioComponent implements OnInit{
       category_id: 3,
     },
     {
-      name: "PT. Panca Pasifik Indonesia",
+      name: "PT. Panca Med Indonesia",
       image: "assets/Materi Website Mawaka/Logo PT. Panca Pasifik Indonesia.svg",
       link: "https://pancatrans.com",
       category_id: 4,
@@ -89,7 +89,7 @@ export class PortfolioComponent implements OnInit{
       name: "Panca Hijau",
       image: "assets/Materi Website Mawaka/logo panca hijau.svg",
       link: "https://pancahijau.com",
-      category_id: 3,
+      category_id: 6,
     },
     // {
     //   name: "PT. Finnet Indonesia",
