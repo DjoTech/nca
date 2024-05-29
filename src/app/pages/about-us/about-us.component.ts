@@ -9,6 +9,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {MOBILE_BREAKPOINT, PEOPLE, RESPONSIVE_OPTIONS, TABLE_BREAKPOINT} from "../../../data/constant";
 
 @Component({
   selector: 'app-about-us',
@@ -22,182 +23,27 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
   @ViewChild('greenArrow') greenArrow!: ElementRef;
   @ViewChild('peoplesSection') peoplesSection!: ElementRef;
 
-  responsiveOptions = [
-    {
-      breakpoint: '1920px',
-      numVisible: 5,
-      numScroll: 1
-    },
-    {
-      breakpoint: '1199px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '991px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '767px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ]
 
+  responsiveOptions = RESPONSIVE_OPTIONS
+  people = PEOPLE
+
+  mobileBreakpoint = MOBILE_BREAKPOINT;
+  tabletBreakpoint = TABLE_BREAKPOINT;
   name: string | null = null;
-
-  placeholder = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium adipisci beatae blanditiis, consequatur doloremque eaque eos ex fugit id illo incidunt ipsum minus nesciunt nihil nostrum odio optio placeat quaerat quia repellendus rerum sunt voluptatibus. Distinctio, dolores ea eum hic impedit iste libero, non odio porro quae quas quasi quidem quos repellendus sit soluta veniam vero. Accusamus aliquam blanditiis cum exercitationem illum ipsam iusto labore libero magni modi nulla officiis omnis qui quibusdam sint, temporibus velit veniam voluptatum? Architecto commodi consequatur deleniti earum fugiat, iste itaque iusto maiores maxime nemo nesciunt nobis odio, qui quia sapiente ut veniam voluptatibus!"
-
-  content_ridho:any="Ridho Singgih is a seasoned professional with a multifaceted background in business strategy, marketing, and service management. Graduating from the prestigious Business School at Bandung Institute of Technology, Ridho embarked on a dynamic career journey that encompassed diverse roles and industries. With three years of experience at MarkPlus Consulting, specializing in marketing, strategy management, and service management, Ridho honed skills critical for navigating complex business landscapes. Transitioning to the burgeoning e-commerce sector, Ridho spent three years at a top leading platform, gaining insights into digital commerce and operational efficiency. Following this, Ridho led a telecommunication construction company for nearly five years, demonstrating exceptional leadership as a business owner. Additionally, Ridho is an active member of the Indonesia Marketing Association, contributing to the advancement of marketing practices and industry knowledge. As a Co-Founder of Mawaka Ventures, Ridho leverages this wealth of experience to drive strategic investment and foster sustainable growth for clients and partners."
-  content_alfian:any="As Chief of Investment at Mawaka Ventures. He studied at Gadjah Mada University majoring in a double degree: Master of Business Administration (MBA) and Wealth Management by CWMA. Before joining Mawaka Ventures, he served as Personal Wealth Manager at Valbury Asia Futures specializing in commodity trading and Contracts For Differences (CFD); Senior Relationship Manager at KB Bukopin Bank with a focus on providing credit to corporate; and Internal Control Manager at Trinusa Group, a company operating in the nickel mining industry."
-  content_edgar:any="As the Chief of Internal Affairs & Compliance of Mawaka Ventures, Edgar Handoko takes pride in providing the best yet fast services to Mawaka’s internal affairs and its clients which consist of legal services, human resources compliances, licences regulatory overview, internal and external due diligence, and many others. With more than 6 years of experiences, Edgar has been involved in various corporate legal transactions and dispute resolution where he has represented numerous Indonesian and international company. To maximize his quality services, Edgar has advanced attorney’s licenses such as: (i) Receiver and Administrator licensed under the Indonesian Association of Receiver and Administrator, (ii) Tax Attorneys licensed under the Tax Court of the Republic Indonesia, and (ii) Mediator licensed under the Jakarta District Courts."
-  content_naufal:any="As the Chief of Investment Officer of Mawaka Ventures, Naufal Aji holds a Bachelor of Industrial Engineering from the University of Indonesia and a Master of Business Management from The University of Warwick. With more than five years of experience as a Management Consultant at Accenture and more than two years as a director of a fintech company at PT Finnet Indonesia, Naufal has honed his expertise in strategic investment and financial planning. His professional journey is complemented by his past involvement as a member of the Indonesian Students Association in London, highlighting his commitment to leadership and international collaboration."
-  content_handy:any="As a Managing Partner at Mawaka Ventures. He studied at Airlangga University majoring in Master of Management (MM), especially industrial engineering and operational management. Before joining Mawaka Ventures, he worked at PT Dayamitra Telekomunikasi, Tbk (Mitratel) as a project manager. Then as Senior Relationship Manager at KB Bukopin Bank with the task of analyzing feasilibilty and providing working capital loan."
-
-  contact_ridho:any="ridho.setiawan@mawaka.vc / 0813-1190-7967"
-  contact_alfian:any="alfian.rosadi@mawaka.vc / 0812-8333-1389"
-  contact_edgar:any="edgar.handoko@mawaka.vc / 0812-2222-1388"
-  contact_naufal:any="naufal.aji@mawaka.vc / +44-7796-251671"
-  contact_handy:any="handy.setianto@mawaka.vc / 0812-2222-1389"
-
-  education_ridho:any=[
-    'assets/education-itb.webp',
-  ]
-  education_alfian:any=[
-    "assets/Materi Website Mawaka/logo-ugm.png",
-  ]
-  education_edgar:any=[
-    "assets/Materi Website Mawaka/logo-ugm.png",
-    "assets/Materi Website Mawaka/logo ui.png",
-  ]
-  education_naufal:any=[
-    "assets/Materi Website Mawaka/logo ui.png",
-    "assets/Materi Website Mawaka/logo warwick.png",
-  ]
-  education_handy:any=[
-    "assets/Materi Website Mawaka/logo univ airlangga.png",
-  ]
-
-
-
-  peoples = [
-    {
-      name: 'Ridho Singgih Setiawan',
-      role: 'Founding Partner',
-      image:'assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png',
-      key: "RIDHO_SINGGIH",
-      expanded: true,
-      contents: this.content_ridho,
-      education:this.education_ridho,
-      contact:this.contact_ridho
-    },
-    {
-      name: 'Handy Setianto',
-      role: 'Managing Partner',
-      image:'assets/Materi Website Mawaka/Foto Handy Setianto.png',
-      key: "HANDY_SETIANTO",
-      expanded: false,
-      contents: this.content_handy,
-      education:this.education_handy,
-      contact:this.contact_handy
-    },
-    {
-      name: 'Edgar Handoko',
-      role: 'Managing Director of Compliance and Operations',
-      image:'assets/Materi Website Mawaka/Foto Edgar Handoko.png',
-      key: "EDGAR_HANDOKO",
-      expanded: false,
-      contents: this.content_edgar,
-      education:this.education_edgar,
-      contact:this.contact_edgar
-    },
-    {
-      name: 'Alfian Rosadi',
-      role: 'Chief Financial Officer',
-      image:'assets/Materi Website Mawaka/Foto Alfian Rosadi.png',
-      key: "ALFIAN_ROSADI",
-      expanded: false,
-      contents: this.content_alfian,
-      education:this.education_alfian,
-      contact:this.contact_alfian
-    },
-    {
-      name: 'Naufal Aji',
-      role: 'Chief of Investment Officer',
-      image:'assets/Materi Website Mawaka/Foto Naufal Aji.png',
-      key: "NAUFAL_AJI",
-      expanded: false,
-      contents: this.content_naufal,
-      education:this.education_naufal,
-      contact:this.contact_naufal
-    }
-  ];
-
-  lists = [
-    {
-      type: "RIDHO_SINGGIH",
-      active: true,
-      contents: this.content_ridho,
-      education:this.education_ridho,
-      contact:this.contact_ridho
-    },
-    {
-      type: "HANDY_SETIANTO",
-      active: false,
-      contents: this.content_handy,
-      education:this.education_handy,
-      contact:this.contact_handy
-    },
-    {
-      type: "EDGAR_HANDOKO",
-      active: false,
-      contents: this.content_edgar,
-      education:this.education_edgar,
-      contact:this.contact_edgar
-    },
-    {
-      type: "ALFIAN_ROSADI",
-      active: false,
-      contents: this.content_alfian,
-      education:this.education_alfian,
-      contact:this.contact_alfian
-    },
-    {
-      type: "NAUFAL_AJI",
-      active: false,
-      contents: this.content_naufal,
-      education:this.education_naufal,
-      contact:this.contact_naufal
-    },
-  ]
-
-  private mobileBreakpoint = 768; // Max width for mobile view
-  private tabletBreakpoint = 992; // Max width for tablet view
-
   // Initial screen size category
   private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
-  contents: any = this.lists[0]
-  detail_people : any = this.peoples[0]
   isMobile=false;
 
-  person: any;
+  person: any = {};
   person_index: { page: any } = { page: 0 }
   first_person_carousel: number = 0;
-
-  handlePageChange(event: any) {
-    this.first_person_carousel = event.page;
-    this.person = this.peoples[this.first_person_carousel] || this.peoples[0];
-    this.ref.detectChanges();
-  }
 
   constructor(
     private ref: ChangeDetectorRef,
     private route: ActivatedRoute
   )
-  {
-  }
+  {}
 
   ngOnInit() {
   }
@@ -214,15 +60,17 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
 
       const scrollToPeoples = params['scrollToPeoples'] === 'true';
       if (scrollToPeoples && this.peoplesSection&& !this.isMobile) {
-        this.peoples[0].expanded=false
-        this.lists[0].active=false
+        this.people[0].expanded=false
+        this.people[0].active=false
         if(this.name){
-          this.person= this.peoples.find(p => p.name === this.name)
+          this.person= this.people.find((p: any) => p.name === this.name)
           if (this.person) {
             this.person.expanded = true;  // Update expanded value to true
             this.onClickType(this.person)
-            this.ref.detectChanges();
-            setTimeout(() => this.scrollToSection(), 0);
+            setTimeout(() => {
+              this.scrollToSection()
+              this.ref.detectChanges();
+            }, 1000);
 
           }
 
@@ -230,38 +78,20 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
       }
       if((scrollToPeoples && this.peoplesSection && this.isMobile)){
         if(this.name){
-          this.person_index.page= this.peoples.findIndex(p => p.name === this.name)
-          this.person= this.peoples.find(p => p.name === this.name)
+          this.person_index.page= this.people.findIndex((p: any) => p.name === this.name)
+          this.person= this.people.find((p: any) => p.name === this.name)
           if (this.person_index && this.person) {
             this.onClickType(this.person)
             this.onPageChange(this.person_index)
             this.first_person_carousel =this.person_index.page
-            this.ref.detectChanges();
-            setTimeout(() => this.scrollToSection(), 0);
+            setTimeout(() => {
+                this.scrollToSection()
+                this.ref.detectChanges();
+            }, 1000);
           }
         }
       }
     });
-
-
-    // this.route.queryParamMap.subscribe((params: any) => {
-    //   console.log('params',params)
-    //   this.scrollToTop();
-
-    //   this.name = params['name'] || null;
-
-    //   this.peoples[0].expanded=false
-    //   this.lists[0].active=false
-
-    //   this.person= this.peoples.find(p => p.name === this.name)
-
-    //   if (this.person) {
-    //     this.person.expanded = true;  // Update expanded value to true
-    //     this.onClickType(this.person)
-    //     this.scrollToSection();
-    //     this.ref.detectChanges();
-    //   }
-    // });
   }
 
   scrollToTop(): void  {
@@ -283,27 +113,18 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
   }
 
   onPageChange(item: any) {
-    if (this.peoples[item.page] === undefined) {
-      this.person = this.peoples[0]
+    if (this.people[item.page] === undefined) {
+      this.person = this.people[0]
     } else {
-      this.person = this.peoples[item.page]
+      this.person = this.people[item.page]
     }
     this.ref.detectChanges();
   }
 
   onClickType(item: any): void {
-    this.peoples.forEach(i => i.expanded = i.key === item.key)
-    this.contents =  this.lists.find(type => type.type === item.key)
-    this.detail_people = this.peoples.find(key => key.key === item.key)
+    this.people.forEach((i: any) => i.expanded = i.key === item.key)
+    this.person = this.people.find((key: any) => key.key === item.key);
     this.ref.detectChanges()
-  }
-
-  expandItem(item: any) {
-    item.expanded = true;
-  }
-
-  collapseItem(item: any) {
-    item.expanded = false;
   }
 
   // Function to get the screen size category
@@ -337,7 +158,7 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
     this.blueArrow.nativeElement.classList.remove('mb-5')
     this.greenArrow.nativeElement.classList.remove('mb-5')
     this.isMobile=false
-    this.person = this.peoples[0]
+    this.person = this.people[0]
     this.ref.detectChanges();
   }
 

@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core';
+import {CATEGORIES, MOBILE_BREAKPOINT, PORTFOLIOS, RESPONSIVE_OPTIONS, TABLE_BREAKPOINT} from "../../../data/constant";
 
 @Component({
   selector: 'app-portfolio',
@@ -8,100 +9,15 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnI
 })
 export class PortfolioComponent implements OnInit{
 
-  private mobileBreakpoint = 768; // Max width for mobile view
-  private tabletBreakpoint = 992; // Max width for tablet view
+  private mobileBreakpoint = MOBILE_BREAKPOINT; // Max width for mobile view
+  private tabletBreakpoint = TABLE_BREAKPOINT; // Max width for tablet view
 
   // Initial screen size category
   private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
   isMobile = false
-
-
-  categories = [
-    {
-      category_id: null,
-      category_name: "All Category"
-    },
-    {
-      category_id: 1,
-      category_name: "Construction"
-    },
-    {
-      category_id: 2,
-      category_name: "Telecommunication"
-    },
-    {
-      category_id: 3,
-      category_name: "Power Solution"
-    },
-    {
-      category_id: 4,
-      category_name: "Logistics"
-    },
-    {
-      category_id: 5,
-      category_name: "Business Services"
-    },
-    {
-      category_id: 6,
-      category_name: "Waste Management"
-    },
-  ]
-
-  portfolios = [
-    {
-      name: "PT. Layton Enterprise",
-      image: "assets/Materi Website Mawaka/logo layton baru.jpeg",
-      link: "https://layton.co.id",
-      category_id: 1,
-    },
-    {
-      name: "PT. Multi Bmitra Sejahtera",
-      image: "assets/Materi Website Mawaka/logo mbs baru.jpeg",
-      link: "https://multibmitrasejahtera.com",
-      category_id: 2,
-    },
-    {
-      name: "PT. Profesional Internet Indonesia",
-      image: "assets/Materi Website Mawaka/logo pronet baru.png",
-      link: "https://pronet.id",
-      category_id: 2,
-    },
-    {
-      name: "PT. Nuansa Chatur Anugrah",
-      image: "assets/Materi Website Mawaka/Logo NCA.svg",
-      link: "",
-      category_id: 3,
-    },
-    {
-      name: "PT. Panca Med Indonesia",
-      image: "assets/Materi Website Mawaka/Logo PT. Panca Pasifik Indonesia.svg",
-      link: "https://pancatrans.com",
-      category_id: 4,
-    },
-    {
-      name: "PT. Barack Legal Indonesia",
-      image: "assets/Materi Website Mawaka/Logo Barack Legal Indonesia.svg",
-      link: "https://baracklegal.com",
-      category_id: 5,
-    },
-    {
-      name: "Panca Hijau",
-      image: "assets/Materi Website Mawaka/logo panca hijau.svg",
-      link: "https://pancahijau.com",
-      category_id: 6,
-    },
-    // {
-    //   name: "PT. Finnet Indonesia",
-    //   image: "assets/Materi Website Mawaka/Logo Finnet.svg",
-    //   category_id: 6,
-    // },
-    // {
-    //   name: "HeloPro",
-    //   image: "assets/Materi Website Mawaka/Logo Helopro.svg",
-    //   category_id: 5,
-    // },
-  ]
+  categories = CATEGORIES
+  portfolios = PORTFOLIOS
 
   // data = this.portfolios.filter(i => i.category_id === 1)
 
@@ -114,28 +30,7 @@ export class PortfolioComponent implements OnInit{
   currentPath = '';
   isHomePage = true;
 
-  responsiveOptions = [
-    {
-      breakpoint: '1920px',
-      numVisible: 5,
-      numScroll: 1
-    },
-    {
-      breakpoint: '1199px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '991px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '767px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ];
+  responsiveOptions = RESPONSIVE_OPTIONS
 
   constructor(
     private ref: ChangeDetectorRef,

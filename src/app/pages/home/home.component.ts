@@ -2,11 +2,12 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  Component, ElementRef,
-  HostListener, OnDestroy,
+  Component,
+  HostListener,
   OnInit, ViewChild
 } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {MOBILE_BREAKPOINT, PEOPLE, RESPONSIVE_OPTIONS} from "../../../data/constant";
 
 
 @Component({
@@ -19,74 +20,14 @@ export class HomeComponent implements OnInit, AfterViewInit  {
 
   @ViewChild('btnLearnMore') btnLearnMore: any;
 
-  private mobileBreakpoint = 768; // Max width for mobile view
+  private mobileBreakpoint = MOBILE_BREAKPOINT; // Max width for mobile view
   private tabletBreakpoint = 1280; // Max width for tablet view
 
   // Initial screen size category
   private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
-  persons = [
-    {
-      name: "Ridho Singgih Setiawan",
-      position: "Founding Partner",
-      image: "assets/Materi Website Mawaka/Foto Ridho Singgih Setiawan.png",
-      active: true,
-    },
-    {
-      name: "Handy Setianto",
-      position: "Managing Partner",
-      image: "assets/Materi Website Mawaka/Foto Handy Setianto.png",
-      active: true,
-    },
-    {
-      name: "Edgar Handoko",
-      position: "Managing Director of Compliance and Operations",
-      image: "assets/Materi Website Mawaka/Foto Edgar Handoko.png",
-      active: true,
-    },
-    {
-      name: "Alfian Rosadi",
-      position: "Chief Financial Officer",
-      image: "assets/Materi Website Mawaka/Foto Alfian Rosadi.png",
-      active: true,
-    },
-    {
-      name: "Naufal Aji",
-      position: "Chief of Investment Officer",
-      image: "assets/Materi Website Mawaka/Foto Naufal Aji.png",
-      active: true,
-    },
-    // {
-    //   name: "Naufal Aji",
-    //   position: "Chief of Investment",
-    //   image: "assets/Materi Website Mawaka/Foto Naufal Aji.png",
-    //   active: false,
-    // },
-  ]
-
-
-  responsiveOptions = [
-    {
-      breakpoint: '1920px',
-      numVisible: 5,
-      numScroll: 5
-    },
-    {
-      breakpoint: '1199px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '991px',
-      numVisible: 1,
-      numScroll: 1
-    },
-    {
-      breakpoint: '767px',
-      numVisible: 1,
-      numScroll: 1
-    }
-  ];
+  people = PEOPLE
+  responsiveOptions = RESPONSIVE_OPTIONS
 
   isMobile = false;
 
@@ -160,16 +101,5 @@ export class HomeComponent implements OnInit, AfterViewInit  {
   }
 
 
-  onClickLearnMore() {
-    this.router.navigate(['./about-us'], {relativeTo: this.route})
-  }
-
-  onClickFindOutMore() {
-    this.router.navigate(['./portfolio'], {relativeTo: this.route})
-  }
-
-  goToAboutUs(name: string) {
-    this.router.navigate(['/about-us'], { queryParams: { name: name, scrollToPeoples: true } });
-  }
 
 }

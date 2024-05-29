@@ -29,14 +29,14 @@
 
       <div class="row">
         <div class="col-md-12">
-          <p-carousel [value]="persons"
-                      [showIndicators]="persons.length > 5"
-                      [showNavigators]="persons.length > 5 || isMobile"
+          <p-carousel [value]="people"
+                      [showIndicators]="people.length > 5"
+                      [showNavigators]="people.length > 5 || isMobile"
                       [autoplayInterval]="2000"
                       [responsiveOptions]="responsiveOptions">
             <ng-template let-person pTemplate="item">
               <a
-                class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
+                class="card h-100 border-0 cursor-pointer d-flex justify-content-cgit pullenter text-decoration-none"
                 [queryParams]="{name: person.name, scrollToPeoples: true}"
                 routerLink="../about-us">
                 <img src="{{ person.image }}"
@@ -45,7 +45,7 @@
                      class="object-fit-cover card-img-top mx-auto d-block"/>
                 <div class="card-body text-start">
                   <h4 class="card-title fs-5">{{ person.name }}</h4>
-                  <p class="card-text-3 mt-3">{{ person.position }}</p>
+                  <p class="card-text-3 mt-3">{{ person.role }}</p>
                 </div>
                 <div class="card-footer bg-white border-0">
                   <span class="btn card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
@@ -60,7 +60,7 @@
 
 <!--      FIGMA-->
 <!--      <div class="row row-cols-1 row-cols-md-2 g-3">-->
-<!--        <ng-container *ngFor="let person of persons">-->
+<!--        <ng-container *ngFor="let person of people">-->
 <!--          <div class="col-md-4">-->
 <!--            <div class="card h-100 border-0">-->
 <!--              <div class="card-body">-->
@@ -69,7 +69,7 @@
 <!--                </div>-->
 <!--                <div class="text-center mt-3">-->
 <!--                  <h4 class="fw-bolder">{{ person.name }}</h4>-->
-<!--                  <h4 class="fw-normal">{{ person.position }}</h4>-->
+<!--                  <h4 class="fw-normal">{{ person.role }}</h4>-->
 <!--                </div>-->
 <!--              </div>-->
 <!--            </div>-->

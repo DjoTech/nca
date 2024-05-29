@@ -240,15 +240,15 @@
 
     <ng-container *ngIf="!isMobile">
       <div class="row justify-content-between text-in-blue align-items-center">
-        <ng-container *ngFor="let people of peoples">
-          <div class="{{people.expanded ? 'col-md-3 expanded' : 'col-md-2' }} text-center">
-            <div  class="photo-container cursor-pointer {{ !people.expanded ? 'opacity-50' : '' }}"
-                  (click)="onClickType(people)">
-              <img [src]="people.image" alt="" class="img-thumbnail border-0 h-100 {{ people.expanded ? 'expanded' : '' }}">
+        <ng-container *ngFor="let person of people">
+          <div class="{{person.expanded ? 'col-md-3 expanded' : 'col-md-2' }} text-center">
+            <div  class="photo-container cursor-pointer {{ !person.expanded ? 'opacity-50' : '' }}"
+                  (click)="onClickType(person)">
+              <img [src]="person.image" alt="" class="img-thumbnail border-0 h-100 {{ person.expanded ? 'expanded' : '' }}">
             </div>
-            <p [ngClass]="{'bold-text': people.expanded}" class="mt-3">
-              {{people.name}} <br>
-              <span>{{people.role}}</span>
+            <p [ngClass]="{'bold-text': person.expanded}" class="mt-3">
+              {{person.name}} <br>
+              <span>{{person.role}}</span>
             </p>
           </div>
         </ng-container>
@@ -257,15 +257,15 @@
 
         <div class="col-md-4">
           <div class="photo-container">
-            <img [src]="detail_people.image" [alt]="detail_people.name" class="w-100 rounded mb-3 img-thumbnail h-100">
+            <img [src]="person.image" [alt]="person.name" class="w-100 rounded mb-3 img-thumbnail h-100">
           </div>
         </div>
         <div class="col-md-8 align-self-center">
-          <h3 class="fw-bolder mt-3">{{detail_people.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> {{detail_people.role}}</small></h3>
-          <p class="text-justify mt-3">{{contents.contents}}</p>
-          <p class="fw-bold mt-3">Contact me : {{contents.contact}}</p>
+          <h3 class="fw-bolder mt-3">{{person.name}} <small class="fw-light"><i class="bi bi-dash-lg"></i> {{person.role}}</small></h3>
+          <p class="text-justify mt-3">{{person.contents}}</p>
+          <p class="fw-bold mt-3">Contact me : {{person.contact}}</p>
           <p class="fw-bold mt-3" >Education</p>
-          <ng-container *ngFor="let education of contents.education" >
+          <ng-container *ngFor="let education of person.education" >
             <img [src]="education" class="img-thumbnail me-2" style="height: 80px;" alt="">
           </ng-container>
 
@@ -275,7 +275,7 @@
 
 
     <ng-container *ngIf="isMobile">
-      <p-carousel [value]="peoples"
+      <p-carousel [value]="people"
                   (onPage)="onPageChange($event)"
                   [numVisible]="5"
                   [numScroll]="5"
