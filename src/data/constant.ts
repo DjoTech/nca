@@ -1,6 +1,6 @@
 export const PEOPLE = [
   {
-    name: 'Ridho Singgih Setiawan',
+    name: 'Ridho Singgih',
     role: 'Founding Partner',
     image:'assets/img/Foto Ridho Singgih Setiawan.png',
     key: "RIDHO_SINGGIH",
@@ -72,7 +72,7 @@ export const RESPONSIVE_OPTIONS = [
   {
     breakpoint: '1920px',
     numVisible: 5,
-    numScroll: 1
+    numScroll: 5
   },
   {
     breakpoint: '1199px',

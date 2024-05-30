@@ -15,47 +15,45 @@
         </ng-container>
       </div>
     </div>
-    <div class="row mt-3 {{ !isMobile ? 'mx-5' : '' }}" style="height: 350px;">
-      <ng-container class="" *ngIf="data.length <= 5 && !isMobile">
-        <div *ngFor="let portfolio of data" class="col-md-2 mx-3">
-          <ng-container >
+    <div *ngIf="data.length <= 5 && !isMobile" class="row mt-3 {{ !isMobile ? 'mx-5' : '' }}" style="height: 350px;">
+      <div *ngFor="let portfolio of data" class="col-md-2 mx-3">
+        <ng-container >
+          <a class="d-block mx-auto card border-0 h-100 text-decoration-none" href="{{ portfolio.link }}"
+             style="height: 275px !important; width: 200px !important;"
+             target="_blank">
+            <img [src]="portfolio.image" [alt]="portfolio.name"
+                 style="height: 200px !important; width: 200px !important;"
+                 class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain">
+            <div class="card-body">
+              <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
+            </div>
+          </a>
+
+        </ng-container>
+      </div>
+    </div>
+
+    <div *ngIf="data.length > 5 || isMobile" class="row mt-3">
+      <div class="col-md-12">
+        <p-carousel [value]="data"
+                    [autoplayInterval]="2000"
+                    [responsiveOptions]="responsiveOptions"
+                    [showIndicators]="true"
+                    [showNavigators]="true">
+          <ng-template let-portfolio pTemplate="item">
             <a class="d-block mx-auto card border-0 h-100 text-decoration-none" href="{{ portfolio.link }}"
                style="height: 275px !important; width: 200px !important;"
                target="_blank">
               <img [src]="portfolio.image" [alt]="portfolio.name"
                    style="height: 200px !important; width: 200px !important;"
-                   class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain">
+                   class="w-100 p-md-3 card-img-top object-fit-contain">
               <div class="card-body">
                 <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
               </div>
             </a>
 
-          </ng-container>
-        </div>
-      </ng-container>
-      <div
-        *ngIf="data.length > 5 || isMobile"
-        class="col-md-12">
-          <p-carousel [value]="data"
-                      [autoplayInterval]="2000"
-                      [responsiveOptions]="responsiveOptions"
-                      [showIndicators]="true"
-                      [showNavigators]="true">
-            <ng-template let-portfolio pTemplate="item">
-              <a class="d-block mx-auto card border-0 h-100 text-decoration-none" href="{{ portfolio.link }}"
-
-                 style="height: 275px !important; width: 200px !important;"
-                 target="_blank">
-                <img [src]="portfolio.image" [alt]="portfolio.name"
-                     style="height: 200px !important; width: 200px !important;"
-                     class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain">
-                <div class="card-body">
-                  <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
-                </div>
-              </a>
-
-            </ng-template>
-          </p-carousel>
+          </ng-template>
+        </p-carousel>
       </div>
     </div>
 
