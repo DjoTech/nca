@@ -15,6 +15,7 @@ export class PortfolioComponent implements OnInit{
   // Initial screen size category
   private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
+  loading = false;
   isMobile = false
   categories = CATEGORIES
   portfolios = PORTFOLIOS
