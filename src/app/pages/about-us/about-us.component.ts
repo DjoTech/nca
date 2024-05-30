@@ -144,8 +144,8 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
     // Implement any other logic needed when the screen size category changes
     // For example, you could adjust layout, reload components, etc.
     if (newCategory === 'mobile' || newCategory === 'tablet') {
-      this.blueArrow.nativeElement.src = 'assets/Arrow_blue_mobile.png'
-      this.greenArrow.nativeElement.src = 'assets/Arrow_green.png';
+      this.blueArrow.nativeElement.src = 'assets/img/Arrow_blue_mobile.png'
+      this.greenArrow.nativeElement.src = 'assets/img/Arrow_green.png';
       this.blueArrow.nativeElement.classList.add('mb-5')
       this.greenArrow.nativeElement.classList.add('mb-5')
       this.isMobile=true
@@ -153,8 +153,8 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
       return;
     }
 
-    this.blueArrow.nativeElement.src = 'assets/about-us-1.png'
-    this.greenArrow.nativeElement.src = 'assets/about-us-2.png'
+    this.blueArrow.nativeElement.src = 'assets/img/about-us-1.png'
+    this.greenArrow.nativeElement.src = 'assets/img/about-us-2.png'
     this.blueArrow.nativeElement.classList.remove('mb-5')
     this.greenArrow.nativeElement.classList.remove('mb-5')
     this.isMobile=false
