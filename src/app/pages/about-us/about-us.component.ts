@@ -55,10 +55,11 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
 
   getParams(): void {
     this.route.queryParams.subscribe(params => {
-      this.scrollToTop();
+      // this.scrollToTop();
       this.name = params['name'] || null;
 
-      const scrollToPeoples = params['scrollToPeoples'] === 'true';
+      const scrollToPeoples = params['scrollToPeoples']==='true';
+      console.log(scrollToPeoples)
       if (scrollToPeoples && this.peoplesSection&& !this.isMobile) {
         this.people[0].expanded=false
         this.people[0].active=false
@@ -70,7 +71,7 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
             setTimeout(() => {
               this.scrollToSection()
               this.ref.detectChanges();
-            }, 1000);
+            }, 250);
 
           }
 
@@ -87,9 +88,23 @@ export class AboutUsComponent implements AfterViewInit, OnInit {
             setTimeout(() => {
                 this.scrollToSection()
                 this.ref.detectChanges();
-            }, 1000);
+            }, 400);
           }
         }
+      }
+      if(!scrollToPeoples){
+        console.log('here')
+        this.people[0].expanded=true
+        this.people[0].active=true
+        this.people[1].expanded=false
+        this.people[1].active=false
+        this.people[2].expanded=false
+        this.people[2].active=false
+        this.people[3].expanded=false
+        this.people[3].active=false
+        this.people[4].expanded=false
+        this.people[4].active=false
+        this.ref.detectChanges();
       }
     });
   }

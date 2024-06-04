@@ -10,7 +10,7 @@ export const PEOPLE = [
     education: [
       'assets/img/education-itb.webp',
     ],
-    contact: "ridho.setiawan@mawaka.vc / 0813-1190-7967"
+    contact: "ridho.setiawan@mawaka.vc"
   },
   {
     name: 'Handy Setianto',
@@ -19,11 +19,12 @@ export const PEOPLE = [
     key: "HANDY_SETIANTO",
     expanded: false,
     active: false,
-    contents: "As a Managing Partner at Mawaka Ventures. He studied at Airlangga University majoring in Master of Management (MM), especially industrial engineering and operational management. Before joining Mawaka Ventures, he worked at PT Dayamitra Telekomunikasi, Tbk (Mitratel) as a project manager. Then as Senior Relationship Manager at KB Bukopin Bank with the task of analyzing feasilibilty and providing working capital loan.",
+    contents: "As a Managing Partner at Mawaka Ventures. He studied at Sepuluh Nopember Institute of Technology (ITS) majoring in industrial engineering, then continued to the next study at Airlangga University majoring in Masters in Management, especially in operational management. Before joining Mawaka Ventures, he worked at PT Huawei Tech Investment as a Project Manager. Then as Senior Relationship Manager at KB Bukopin Bank with the task of analyzing feasilibilty (has a risk management certificate from BSMR) and providing working capital loan.",
     education: [
       "assets/img/logo univ airlangga.png",
+      "assets/img/logo its.png",
     ],
-    contact: "handy.setianto@mawaka.vc / 0812-2222-1389"
+    contact: "handy.setianto@mawaka.vc"
   },
   {
     name: 'Edgar Handoko',
@@ -37,7 +38,7 @@ export const PEOPLE = [
       "assets/img/logo-ugm.png",
       "assets/img/logo ui.png",
     ],
-    contact: "edgar.handoko@mawaka.vc / 0812-2222-1388"
+    contact: "edgar.handoko@mawaka.vc"
   },
   {
     name: 'Alfian Rosadi',
@@ -46,11 +47,12 @@ export const PEOPLE = [
     key: "ALFIAN_ROSADI",
     expanded: false,
     active: false,
-    contents: "As Chief of Investment at Mawaka Ventures. He studied at Gadjah Mada University majoring in a double degree: Master of Business Administration (MBA) and Wealth Management by CWMA. Before joining Mawaka Ventures, he served as Personal Wealth Manager at Valbury Asia Futures specializing in commodity trading and Contracts For Differences (CFD); Senior Relationship Manager at KB Bukopin Bank with a focus on providing credit to corporate; and Internal Control Manager at Trinusa Group, a company operating in the nickel mining industry.",
+    contents: "As a Chief Financial Officer at Mawaka Ventures. Initially, he studied at Jenderal Soedirman University majoring in financial management. Then proceed to higher strata at Gadjah Mada University majoring in a double degree: Master of Business Administration (MBA) and Wealth Management by CWMA. Before joining Mawaka Ventures, he served as Personal Wealth Manager at Valbury Asia Futures specializing in commodity trading and Contracts For Differences (CFD); Senior Relationship Manager at KB Bukopin Bank with a focus on providing credit to corporate; and Internal Control Manager at Trinusa Group, a company operating in the nickel mining industry.",
     education: [
       "assets/img/logo-ugm.png",
+      "assets/img/logo unsoed.png",
     ],
-    contact: "alfian.rosadi@mawaka.vc / 0812-8333-1389"
+    contact: "alfian.rosadi@mawaka.vc"
   },
   {
     name: 'Naufal Aji',
@@ -64,7 +66,7 @@ export const PEOPLE = [
       "assets/img/logo ui.png",
       "assets/img/logo warwick.png",
     ],
-    contact: "naufal.aji@mawaka.vc / +44-7796-251671"
+    contact: "naufal.aji@mawaka.vc"
   }
 ];
 
