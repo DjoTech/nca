@@ -36,7 +36,7 @@
                       [responsiveOptions]="responsiveOptions">
             <ng-template let-person pTemplate="item">
               <a
-                class="card h-100 border-0 cursor-pointer d-flex justify-content-cgit pullenter text-decoration-none"
+                class="card h-100 border-0 cursor-pointer d-flex justify-content-center text-decoration-none"
                 [queryParams]="{name: person.name, scrollToPeoples: true}"
                 routerLink="../about-us">
                 <img src="{{ person.image }}"
