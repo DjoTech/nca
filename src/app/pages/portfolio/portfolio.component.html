@@ -19,13 +19,16 @@
       <div *ngFor="let portfolio of data" class="col-md-2 mx-4">
         <ng-container >
           <a class="d-block mx-auto card border-0 h-100 text-decoration-none" href="{{ portfolio.link }}"
-             style="height: 275px !important; width: 200px !important;"
+             style="height: 325px !important; width: 200px !important;"
              target="_blank">
             <img [src]="portfolio.image" [alt]="portfolio.name"
                  style="height: 200px !important; width: 200px !important;"
                  class="w-100 px-md-3 pt-md-3 card-img-top object-fit-contain">
             <div class="card-body">
               <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <span class="card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
             </div>
           </a>
 
@@ -42,13 +45,16 @@
                     [showNavigators]="true">
           <ng-template let-portfolio pTemplate="item">
             <a class="d-block mx-auto card border-0 h-100 text-decoration-none" href="{{ portfolio.link }}"
-               style="height: 275px !important; width: 200px !important;"
+               style="height: 325px !important; width: 200px !important;"
                target="_blank">
               <img [src]="portfolio.image" [alt]="portfolio.name"
                    style="height: 200px !important; width: 200px !important;"
                    class="w-100 p-md-3 card-img-top object-fit-contain">
               <div class="card-body">
                 <h6 class="card-title fs-6">{{ portfolio.name }}</h6>
+              </div>
+              <div class="card-footer bg-white border-0">
+                <span class="card-text fw-normal">+ Find Out More <i class="bi bi-arrow-right"></i></span>
               </div>
             </a>
 

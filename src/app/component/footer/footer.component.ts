@@ -61,6 +61,8 @@ export class FooterComponent implements AfterViewInit{
       mawakaLogo.classList.remove('text-end')
       // @ts-ignore
       mawakaLogo.classList.add('text-center')
+      // @ts-ignore
+      mawakaLogo.classList.add('mb-3')
 
       this.ref.detectChanges();
       return;
@@ -74,7 +76,8 @@ export class FooterComponent implements AfterViewInit{
     mawakaLogo.classList.remove('text-center')
     // @ts-ignore
     mawakaLogo.classList.add('text-end')
-
+    // @ts-ignore
+    mawakaLogo.classList.remove('mb-3')
     // @ts-ignore
     bgFooter2.classList.remove('darken')
 
