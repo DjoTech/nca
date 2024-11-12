@@ -1,8 +1,7 @@
-<div class="container-fluid {{ isHomepage ? 'position-absolute' : '' }}"
-     style="background-image: url('assets/home/bg-home.png'); background-position: center; background-position-y: -1000px; background-repeat: no-repeat;">
-  <nav class="navbar navbar-expand-md row bg-gray align-items-center" style="{{ isHomepage ? 'opacity: 0.7;' : '' }}">
+<div class="container-fluid {{ isHomepage ? 'position-absolute' : '' }}">
+  <nav class="navbar navbar-expand-md row bg-gray align-items-center" style="background-image: url('assets/img/bg-navbar.png');">
     <div class="col-md-4">
-      <img src="assets/img/logo-mawaka-dark.svg" class="cursor-pointer" alt="" height="40" routerLink="home">
+      <img src="assets/img/logo.png" class="cursor-pointer" alt="" height="40" routerLink="home">
       <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,12 +10,10 @@
       <div class="collapse navbar-collapse fw-bolder row flex-wrap" id="navbarText">
         <div class="navbar-nav text-center">
           <div class="col-md-2"></div>
-          <!-- <div class="col-md-2 nav-item"><a routerLink="home" class="nav-link text-mawaka fs-5 {{ currentPath === '/home' || currentPath ==='/mawaka-venture/home' ? 'fw-bolder' : '' }}">Home</a></div> -->
-          <div class="col-md-2 nav-item"><a routerLink="about-us" class="nav-link text-mawaka fs-5 {{ currentPath === '/about-us' || currentPath === '/mawaka-venture/about-us' ? 'fw-bolder' : '' }}">About Us</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="portfolio" class="nav-link text-mawaka fs-5 {{ currentPath === '/portfolio' || currentPath === '/mawaka-venture/portfolio' ? 'fw-bolder' : '' }}">Portfolio</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="strategy" class="nav-link text-mawaka fs-5 {{ currentPath === '/strategy' || currentPath === '/mawaka-venture/strategy' ? 'fw-bolder' : '' }}">Strategy</a></div>
-          <div class="col-md-2 nav-item"><a routerLink="contact-us" class="nav-link text-mawaka fs-5 {{ currentPath === '/contact-us' || currentPath === '/mawaka-venture/contact-us' ? 'fw-bolder' : '' }}">Contact Us</a></div>
-          <div class="col-md-2 nav-item"><a href="https://linkedin.com/company/mawaka-ventures" target="_blank" class="nav-link"><i class="bi bi-linkedin text-mawaka fs-5"></i></a></div>
+           <div class="col-md-2 nav-item"><a routerLink="home" class="nav-link text-white fs-5 {{ currentPath === '/home' || currentPath ==='/nca/home' ? 'fw-bolder' : '' }}">Home</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="about-us" class="nav-link text-white fs-5 {{ currentPath === '/about-us' || currentPath === '/nca/about-us' ? 'fw-bolder' : '' }}">About Us</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="product" class="nav-link text-white fs-5 {{ currentPath === '/product' || currentPath === '/nca/product' ? 'fw-bolder' : '' }}">Product</a></div>
+          <div class="col-md-2 nav-item"><a routerLink="information" class="nav-link text-white fs-5 {{ currentPath === '/information' || currentPath === '/nca/information' ? 'fw-bolder' : '' }}">Information</a></div>
         </div>
       </div>
     </div>

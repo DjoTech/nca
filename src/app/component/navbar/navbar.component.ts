@@ -8,7 +8,7 @@ import {NavigationEnd, Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  isHomepage = false
+  isHomepage = true
   currentPath = '/home'
 
   constructor(
