@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+
+  selectedProduct = 3;
+
+  selectProduct(productId: number) {
+    this.selectedProduct = productId;
+  }
 }
