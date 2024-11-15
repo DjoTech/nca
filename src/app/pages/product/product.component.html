@@ -8,36 +8,34 @@
   </div>
 </div>
 <section class="product-list m-5" id="myGroup">
-  <div class="accordion-group">
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item fw-bolder home-title">1</li>
-      <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample">
-        <a class="list-group-item list-group-item-action" aria-current="true">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item fw-bolder home-title">1</li>
+    <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="width: 50%;">
+      <a class="list-group-item list-group-item-action" aria-current="true" >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+        </div>
+        <div class="collapse indent collapse-horizontal" id="collapseExample" style="max-height: 100px;">
+          <div class="card card-body">
+            Available in a range of capacities from 1000 to 3000 watts, with subracks of 3 to 12 tiers, offering versatile and efficient solutions.
           </div>
-          <div class="collapse indent collapse-horizontal" id="collapseExample">
-            <div class="card card-body" style="width: 300px;">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item fw-bolder home-title">2</li>
+    <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample1" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="width: 50%;">
+      <a class="list-group-item list-group-item-action" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+        </div>
+        <div class="collapse collapse-horizontal" id="collapseExample1" style="max-height: 100px;">
+          <div class="card card-body">
+            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
           </div>
-        </a>
-      </li>
-    </ul>
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item fw-bolder home-title">2</li>
-      <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample1" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample">
-        <a class="list-group-item list-group-item-action" aria-current="true">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-          </div>
-          <div class="collapse collapse-horizontal" id="collapseExample1">
-            <div class="card card-body" style="width: 300px;">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </div>
+        </div>
+      </a>
+    </li>
+  </ul>
 </section>
