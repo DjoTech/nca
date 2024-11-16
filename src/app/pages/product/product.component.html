@@ -7,35 +7,46 @@
     <button class="cta-button">More Information <i class="bi bi-arrow-right"></i></button>
   </div>
 </div>
-<section class="product-list m-5" id="myGroup">
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item fw-bolder home-title">1</li>
-    <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="width: 50%;">
-      <a class="list-group-item list-group-item-action" aria-current="true" >
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-        </div>
-        <div class="collapse indent collapse-horizontal" id="collapseExample" style="max-height: 100px;">
-          <div class="card card-body">
-            Available in a range of capacities from 1000 to 3000 watts, with subracks of 3 to 12 tiers, offering versatile and efficient solutions.
+
+<section class="product-list m-5 position-relative overflow-x-hidden rounded-3" style="background-color: white; height: 800px;" id="myGroup">
+  <div class="position-absolute top-0 start-0 z-0" style="background-color: white; width: 50%; height: 100%;">
+  </div>
+  <div class="position-absolute z-0 top-0 start-50" style="width: 50%;">
+    <img src="/assets/img/product/generator diesel 1.png">
+  </div>
+  <div class="position-relative z-1" style="background-color: transparent; max-width: 60%;">
+    <h1>NCA for Customer</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing edivt. Aenean id nibh sed nulla commodo maximus nec sed tortor. </p>
+    <div class="grid gap-0 list-group list-group-horizontal row">
+      <div class="list-group-item fw-bolder home-title border-0 rounded-1 col-1" style="background-color: #e6e6e6;">1</div >
+      <div class="list-group-item border-0 rounded-0 col-11" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="background-color: rgba(0,0,0,0);">
+        <a class="list-group-item list-group-item-action border-0" aria-current="true" style="background-color: rgba(0,0,0,0);" >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
           </div>
-        </div>
-      </a>
-    </li>
-  </ul>
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item fw-bolder home-title">2</li>
-    <li class="list-group-item" data-bs-toggle="collapse" data-bs-target="#collapseExample1" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="width: 50%;">
-      <a class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-        </div>
-        <div class="collapse collapse-horizontal" id="collapseExample1" style="max-height: 100px;">
-          <div class="card card-body">
-            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body border-0 rounded-0 p-0" style="background-color: rgba(0,0,0,0);">
+              Available in a range of capacities from 1000 to 3000 watts, with subracks of 3 to 12 tiers, offering versatile and efficient solutions.
+            </div>
           </div>
-        </div>
-      </a>
-    </li>
-  </ul>
+        </a>
+      </div>
+      <div class="list-group-item fw-bolder home-title border-0 rounded-1 col-1" style="background-color: #e6e6e6;">2</div >
+      <div class="list-group-item border-0 rounded-0 col-11" data-bs-toggle="collapse" data-bs-target="#collapseExample1" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="background-color: rgba(0,0,0,0);">
+        <a class="list-group-item list-group-item-action border-0" aria-current="true" style="background-color: rgba(0,0,0,0);">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">List group item heading</h5>
+          </div>
+          <div class="collapse" id="collapseExample1">
+            <div class="card card-body border-0 rounded-0 p-0" style="background-color: rgba(0,0,0,0);">
+              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
 </section>
