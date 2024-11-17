@@ -1,1 +1,78 @@
-<p>product works!</p>
+<div class="hero-section">
+  <div class="right-section"></div>
+  <div class="hero-content">
+    <h1 class='home-title'>Empowering Industries with Cutting-Edge Power Solutions</h1>
+    <p>Discover cutting-edge products that deliver reliable, safe, and sustainable energy solutions for tomorrow's world.</p>
+    <button class="cta-button">More Information <i class="bi bi-arrow-right"></i></button>
+  </div>
+</div>
+
+<section
+  class="product-list m-5 position-relative overflow-hidden rounded-3"
+  style="background-color: white; max-height: 1500px; min-height: 500px;"
+  id="myGroup"
+>
+  <div class="position-absolute z-0 top-0 gradient-container w-100 h-100" style="left: 30%;">
+    <img
+      [src]="product[selectedProduct].image"
+      class="position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-cover"
+      [ngClass]="{
+        'object-fit-none':selectedProduct<=2
+      }"
+      alt="Product Image"
+    />
+  </div>
+  <div
+    class="position-relative z-1 m-5"
+    style="background-color: transparent; max-width: 60%;"
+  >
+    <h1>NCA for Customer</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id nibh
+      sed nulla commodo maximus nec sed tortor.
+    </p>
+    <div class="grid gap-0 list-group list-group-horizontal row" style="background-color: transparent;">
+      <ng-container *ngFor="let item of product; let i = index">
+        <!-- Product Number -->
+        <div
+          class="list-group-item fw-bolder home-title border-0 col-12 col-md-1 d-flex justify-content-center"
+          [ngClass]="{
+            'bg-danger text-white': selectedProduct === i,
+            'bg-light': selectedProduct !== i,
+            'rounded-top-1': item.no=='1',
+            'rounded-bottom-0': item.no=='1',
+            'rounded-bottom-1': item.no=='7'
+          }"
+          style="cursor: pointer;"
+          (click)="selectProduct(i)"
+        >
+          {{ item.no }}
+        </div>
+
+        <!-- Product Details -->
+        <div
+          class="list-group-item border-0 rounded-0 col-12 col-md-11"
+          style="background-color: transparent;"
+        >
+          <a
+            class="list-group-item list-group-item-action border-0"
+            aria-current="true"
+            style="background-color: transparent; cursor: pointer;"
+            (click)="selectProduct(i)"
+          >
+            <div class="d-flex w-100 justify-content-between" style="background-color: transparent;">
+              <h5 class="mb-1">{{ item.title }}</h5>
+            </div>
+            <div
+              *ngIf="selectedProduct === i"
+              class="card card-body border-0 rounded-0 p-0"
+              style="background-color: rgba(0, 0, 0, 0); font-weight: normal;"
+            >
+              {{ item.contents }}
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
