@@ -1,5 +1,4 @@
 <div class="hero-section">
-  <div class="left-section"></div>
   <div class="right-section"></div>
   <div class="hero-content">
     <h1 class='home-title'>Empowering Industries with Cutting-Edge Power Solutions</h1>
@@ -8,45 +7,72 @@
   </div>
 </div>
 
-<section class="product-list m-5 position-relative overflow-x-hidden rounded-3" style="background-color: white; height: 700px;" id="myGroup">
-  <div class="position-absolute top-0 start-0 z-0" style="background-color: white; width: 50%; height: 100%;">
+<section
+  class="product-list m-5 position-relative overflow-hidden rounded-3"
+  style="background-color: white; max-height: 1500px; min-height: 500px;"
+  id="myGroup"
+>
+  <div class="position-absolute z-0 top-0 gradient-container w-100 h-100" style="left: 30%;">
+    <img
+      [src]="product[selectedProduct].image"
+      class="position-absolute top-50 start-50 translate-middle w-100 h-100 object-fit-cover"
+      [ngClass]="{
+        'object-fit-none':selectedProduct<=2
+      }"
+      alt="Product Image"
+    />
   </div>
-  <div class="position-absolute z-0 top-0 start-50 gradient-container">
-    <img src="/assets/img/product/generator diesel 1.png" class="img-fluid">
-  </div>
-  <div class="position-relative z-1" style="background-color: transparent; max-width: 60%;">
+  <div
+    class="position-relative z-1 m-5"
+    style="background-color: transparent; max-width: 60%;"
+  >
     <h1>NCA for Customer</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing edivt. Aenean id nibh sed nulla commodo maximus nec sed tortor. </p>
-    <div class="grid gap-0 list-group list-group-horizontal row">
-      <div class="list-group-item fw-bolder home-title border-0 rounded-1 col-1" style="background-color: #e6e6e6;">1</div >
-      <div class="list-group-item border-0 rounded-0 col-11" data-bs-toggle="collapse" data-bs-target="#collapseExample" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="background-color: rgba(0,0,0,0);">
-        <a class="list-group-item list-group-item-action border-0" aria-current="true" style="background-color: rgba(0,0,0,0);" >
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-          </div>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body border-0 rounded-0 p-0" style="background-color: rgba(0,0,0,0);">
-              Available in a range of capacities from 1000 to 3000 watts, with subracks of 3 to 12 tiers, offering versatile and efficient solutions.
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="list-group-item fw-bolder home-title border-0 rounded-1 col-1" style="background-color: #e6e6e6;">2</div >
-      <div class="list-group-item border-0 rounded-0 col-11" data-bs-toggle="collapse" data-bs-target="#collapseExample1" data-parent="#myGroup" aria-expanded="false" aria-controls="collapseExample" style="background-color: rgba(0,0,0,0);">
-        <a class="list-group-item list-group-item-action border-0" aria-current="true" style="background-color: rgba(0,0,0,0);">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-          </div>
-          <div class="collapse" id="collapseExample1">
-            <div class="card card-body border-0 rounded-0 p-0" style="background-color: rgba(0,0,0,0);">
-              Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-            </div>
-          </div>
-        </a>
-      </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id nibh
+      sed nulla commodo maximus nec sed tortor.
+    </p>
+    <div class="grid gap-0 list-group list-group-horizontal row" style="background-color: transparent;">
+      <ng-container *ngFor="let item of product; let i = index">
+        <!-- Product Number -->
+        <div
+          class="list-group-item fw-bolder home-title border-0 col-12 col-md-1 d-flex justify-content-center"
+          [ngClass]="{
+            'bg-danger text-white': selectedProduct === i,
+            'bg-light': selectedProduct !== i,
+            'rounded-top-1': item.no=='1',
+            'rounded-bottom-0': item.no=='1',
+            'rounded-bottom-1': item.no=='7'
+          }"
+          style="cursor: pointer;"
+          (click)="selectProduct(i)"
+        >
+          {{ item.no }}
+        </div>
 
+        <!-- Product Details -->
+        <div
+          class="list-group-item border-0 rounded-0 col-12 col-md-11"
+          style="background-color: transparent;"
+        >
+          <a
+            class="list-group-item list-group-item-action border-0"
+            aria-current="true"
+            style="background-color: transparent; cursor: pointer;"
+            (click)="selectProduct(i)"
+          >
+            <div class="d-flex w-100 justify-content-between" style="background-color: transparent;">
+              <h5 class="mb-1">{{ item.title }}</h5>
+            </div>
+            <div
+              *ngIf="selectedProduct === i"
+              class="card card-body border-0 rounded-0 p-0"
+              style="background-color: rgba(0, 0, 0, 0); font-weight: normal;"
+            >
+              {{ item.contents }}
+            </div>
+          </a>
+        </div>
+      </ng-container>
     </div>
   </div>
-
-
 </section>

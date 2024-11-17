@@ -10,7 +10,7 @@ import {MOBILE_BREAKPOINT, PRODUCT, RESPONSIVE_OPTIONS, TABLE_BREAKPOINT} from "
 export class ProductComponent {
   product = PRODUCT
 
-  selectedProduct = 3;
+  selectedProduct = 0;
 
   selectProduct(productId: number) {
     this.selectedProduct = productId;
