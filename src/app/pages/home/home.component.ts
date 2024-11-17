@@ -16,88 +16,124 @@ import {MOBILE_BREAKPOINT, PEOPLE, RESPONSIVE_OPTIONS} from "../../../data/const
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit, AfterViewInit  {
+export class HomeComponent implements OnInit  {
 
-  @ViewChild('btnLearnMore') btnLearnMore: any;
-
-  private mobileBreakpoint = MOBILE_BREAKPOINT; // Max width for mobile view
-  private tabletBreakpoint = 1280; // Max width for tablet view
-
-  // Initial screen size category
-  private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
-
-  people = PEOPLE
-  responsiveOptions = RESPONSIVE_OPTIONS
-
-  isMobile = false;
-
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private ref: ChangeDetectorRef
-  ) {
+  items = {
+    business_line: [
+      {
+        name: "DC Power Supply",
+        img: "assets/img/home/dc-power-supply.png"
+      },
+      {
+        name: "Battery",
+        img: "assets/img/home/battery.png"
+      },
+      {
+        name: "Generator",
+        img: "assets/img/home/generator.png"
+      },
+      {
+        name: "LV Switchboard",
+        img: "assets/img/home/lv-switchboard.png"
+      },
+      {
+        name: "MV Switchgear",
+        img: "assets/img/home/mv-switchgear.png"
+      },
+      {
+        name: "Solar Panel",
+        img: "assets/img/home/solar-panel.png"
+      },
+      {
+        name: "HV Substation",
+        img: "assets/img/home/hv-substation.png"
+      },
+    ],
+    solutions: [
+      {
+        name: "Cyber Security",
+        img: "assets/img/home/cyber-security.png"
+      },
+      {
+        name: "Data Center",
+        img: "assets/img/home/data-center.png"
+      },
+      {
+        name: "Starlink",
+        img: "assets/img/home/starlink.png"
+      },
+      {
+        name: "FTH",
+        img: "assets/img/home/fth.png"
+      },
+      {
+        name: "Telecommunication",
+        img: "assets/img/home/telecommunication.png"
+      },
+      {
+        name: "Fiber Optic",
+        img: "assets/img/home/fiber-optic.png"
+      },
+      {
+        name: "Radio Link",
+        img: "assets/img/home/radio-link.png"
+      },
+      {
+        name: "Manage Service",
+        img: "assets/img/home/manage-service.png"
+      },
+    ],
+    customers: [
+      {
+        name: "Telom Indonesia",
+        img: "assets/img/home/telkom-indonesia.png"
+      },
+      {
+        name: "Telomsat",
+        img: "assets/img/home/telkomsat.png",
+      },
+      {
+        name: "Telom Infra",
+        img: "assets/img/home/telkom-infra.png",
+      },
+      {
+        name: "Mitratel",
+        img:   "assets/img/home/mitratel.png",
+      },
+      {
+        name: "Finnet",
+        img: "assets/img/home/finnet.png",
+      },
+    ]
   }
 
-  ngOnInit(): void {
-
-  }
-
-  ngAfterViewInit(): void {
-    this.windowCheck();
-  }
-
-  windowCheck() {
-    const width = window.innerWidth;
-    const category = this.getCategory(width);
-    this.handleResizeChange(category)
-  }
-
-  // Function to get the screen size category
-  private getCategory(width: number): 'mobile' | 'tablet' | 'desktop' {
-    if (width < this.mobileBreakpoint) {
-      return 'mobile';
-    } else if (width < this.tabletBreakpoint) {
-      return 'tablet';
-    } else {
-      return 'desktop';
+  responsiveOptions = [
+    {
+      breakpoint: '1920px',
+      numVisible: 5,
+      numScroll: 5
+    },
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 1,
+      numScroll: 1
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1
     }
+  ]
+
+  constructor() {
   }
 
-
-  // Function to handle actions when resize causes a category change
-  private handleResizeChange(newCategory: 'mobile' | 'tablet' | 'desktop') {
-    // console.log(`Screen size category changed to: ${newCategory}`);
-    // Implement any other logic needed when the screen size category changes
-    // For example, you could adjust layout, reload components, etc.
-    if (newCategory === 'mobile' || newCategory === 'tablet' || (newCategory === 'desktop' && window.innerWidth <= this.tabletBreakpoint) ) {
-      // @ts-ignore
-      btnLearnMore.classList.add('btn-sm')
-      // @ts-ignore
-      btnLearnMore.classList.remove('p-md-3')
-      this.isMobile = true;
-      this.ref.detectChanges();
-      return;
-    }
-    // @ts-ignore
-    btnLearnMore.classList.remove('btn-sm')
-    // @ts-ignore
-    btnLearnMore.classList.add('p-md-3')
-    this.isMobile = false;
-    this.ref.detectChanges();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any = null) {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    // console.log(`Window resized to width: ${width}, height: ${height}`);
-
-    // Get the new screen size category
-    const newCategory = this.getCategory(width);
-
-    // Perform actions if the category changes
-    this.currentCategory = newCategory;
-    this.handleResizeChange(newCategory);
+  ngOnInit() {
   }
 
 

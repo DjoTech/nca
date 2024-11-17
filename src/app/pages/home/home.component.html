@@ -1,67 +1,88 @@
-<section class="d-flex justify-content-center align-items-center  container-fluid p-md-5"
-         style="background-image: url('assets/img/bg-home.png'); background-position: center; background-position-y: -1000px; background-repeat: no-repeat; height: 95vh;">
-  <div class="row">
-    <div class="col-md-12">
-      <h2 class="fw-bolder home-title">
+<section class="d-flex align-items-center container-fluid p-md-5 nca-bg-dark text-white">
+  <div class="row mt-5">
+    <div class="col-md-7 w-100 p-md-5">
+      <h2 class="fw-bolder fs-1">
         Leading in Power Solution <br>
-        <span class="fst-italic fw-normal">#Thrive on innovation</span>
+        <span class="fst-italic fw-normal fs-2">#Thrive on innovation</span>
       </h2>
-      <h3 class="mt-3 fw-normal subtitle">
+      <h3 class="mt-3 fw-normal fs-4 ">
         Our expertise in power solutions enables us <br>
         to provide cutting-edge technology tailored <br>
         to your specific needs. Experience the future <br>
         of power with us.
       </h3>
-      <button id="btnLearnMore" #btnLearnMore class="btn btn-danger rounded-2 text-white mt-3 p-md-3" routerLink="../about-us">
+      <button id="btnLearnMore" #btnLearnMore class="btn btn-danger rounded-2 text-white mt-3 p-md-3 fw-bold" routerLink="../about-us">
         Learn More <i class="bi bi-arrow-right"></i>
       </button>
+    </div>
+    <div class="col-md-5">
+
     </div>
   </div>
 </section>
 
-<div class="bg-white py-md-5 mt-5">
+<div class="bg-white py-md-5 mt-5 text-center">
   <section class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-5">Our Business Line</h1>
-      </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+        <h1 class="fw-bolder display-3">Our Business Line</h1>
+        <p class="text-justify fs-3 text-center">
           Empower your business with expert energy solutions planning, installation, <br>
           and maintenance all covered by our years of experience
         </p>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-      </div>
+    <div class="row justify-content-center">
+      <ng-container *ngFor="let item of items.business_line">
+        <div class="col-md-4 my-3">
+          <div
+            class="card h-100 border-5 border-black p-md-3 rounded-5 d-flex justify-content-center text-decoration-none">
+            <img src="{{ item.img }}"
+                 [alt]="item.name"
+                 style="height: 200px !important; width: 200px !important;"
+                 class="object-fit-cover card-img-top mx-auto d-block"/>
+            <div class="card-body text-center pb-0">
+              <h4 class="card-title fs-5" >{{ item.name }}</h4>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
 
   </section>
 </div>
 
-<div class="bg-white py-md-5 mt-5">
+<div class="bg-white py-md-5 mt-5 text-center">
   <section class="container">
+
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-5">Improving Your Business Growth</h1>
-      </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+        <h1 class="fw-bolder display-3">Improving Your Business Growth</h1>
+        <p class="text-justify fs-3 text-center">
           Discover More Opportunities and Innovation with Our Solutions
         </p>
       </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
-
-        </p>
-      </div>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let item of items.solutions">
+        <div class="col-md-3 my-3">
+          <div
+            class="card h-100 border-0 d-flex justify-content-center text-decoration-none img-thumbnail ">
+            <img src="{{ item.img }}"
+                 [alt]="item.name"
+                 style="height: 200px !important; width: 200px !important;"
+                 class="object-fit-contain card-img-top mx-auto d-block bg-dark rounded-5 border-0 p-md-1"/>
+            <div class="card-body text-center pb-0">
+              <h4 class="card-title fs-5" >{{ item.name }}</h4>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <p class="text-justify fs-3">
+        <p class="text-center fs-3">
           We deliver tailored energy solutions to enhance your business. <br>
           Our experts assess your electrical infrastructure and offer <br>
           strategies to maximize efficiency and reliability
@@ -71,7 +92,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <button id="btnLearnMore" #btnLearnMore class="btn btn-danger rounded-2 text-white mt-3 p-md-3" routerLink="../about-us">
+        <button id="btnLearnMore" #btnLearnMore class="btn btn-danger rounded-2 fs-3 text-white mt-3 p-md-3 fw-bold w-25" routerLink="../about-us">
           Learn More <i class="bi bi-arrow-right"></i>
         </button>
       </div>
@@ -80,45 +101,108 @@
   </section>
 </div>
 
-<div class="bg-white py-md-5 mt-5">
+<div class="bg-white py-md-5 mt-5 text-center">
   <section class="container">
+
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-5">Project Experience</h1>
-      </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+        <h1 class="fw-bolder display-3">Project Experience</h1>
+        <p class="text-justify fs-3 text-center">
           NCA has a proven track record of delivering successful projects <br>
           for diverse clients, including major telecommunications <br>
           companies, spanning over six years
         </p>
       </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+    </div>
 
-        </p>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card shadow">
+              <div class="card-body">
+                <p>
+                  <span class="fs-1 fw-bold">100+</span> <br>
+                  <span class="fs-5">Total Sites Increased</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow">
+              <div class="card-body">
+                <p>
+                  <span class="fs-1 fw-bold">250%</span> <br>
+                  <span class="fs-5">Increase Customers</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3">
+            <div class="card shadow">
+              <div class="card-body">
+                <p>
+                  <span class="fs-1 fw-bold">90%</span> <br>
+                  <span class="fs-5">Project from Telecommunication Company</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3">
+            <div class="card shadow">
+              <div class="card-body">
+                <p>
+                  <span class="fs-1 fw-bold">6+ years</span> <br>
+                  <span class="fs-5">Experience in Managing Power Solutions</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <img src="assets/img/home/bg-section-4-1.png" class="img-fluid" alt="">
       </div>
     </div>
+
+
   </section>
+
 </div>
 
-<div class="bg-white py-md-5 mt-5">
+
+<div class="bg-white py-md-5 mt-5 text-center">
   <section class="container">
+
     <div class="row">
       <div class="col-md-12">
-        <h1 class="fw-bolder display-5">Customers & Partners</h1>
-      </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+        <h1 class="fw-bolder display-3">Customers & Partners</h1>
+        <p class="text-justify fs-3 text-center">
           Trust of major corporations strengthens our commitment to <br>
           providing the best power solutions that meet global challenges
         </p>
       </div>
-      <div class="col-md-12">
-        <p class="text-justify fs-3">
+    </div>
 
-        </p>
+    <div class="row">
+      <div class="col-md-12">
+        <p-carousel [value]="items.customers"
+                    [showIndicators]="items.customers.length > 5"
+                    [showNavigators]="items.customers.length > 5"
+                    [autoplayInterval]="2000"
+                    [responsiveOptions]="responsiveOptions">
+          <ng-template let-item pTemplate="item">
+            <div class="card h-100 border-0 d-flex justify-content-center text-decoration-none">
+              <img src="{{ item.img }}"
+                   [alt]="item.name"
+                   style="height: 200px !important; width: 200px !important;"
+                   class="object-fit-contain card-img-top mx-auto d-block"/>
+            </div>
+          </ng-template>
+        </p-carousel>
       </div>
     </div>
+
+
   </section>
 </div>
