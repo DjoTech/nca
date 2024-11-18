@@ -13,6 +13,7 @@ import {CarouselModule} from "primeng/carousel";
 import {TagModule} from "primeng/tag";
 import {ProductComponent} from "./pages/product/product.component";
 import {InformationComponent} from "./pages/information/information.component";
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {InformationComponent} from "./pages/information/information.component";
     HomeComponent,
     ProductComponent,
     InformationComponent,
+    ContactUsComponent,
   ],
   imports: [
     AppRoutingModule,
