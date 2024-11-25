@@ -1,4 +1,5 @@
 import {AfterViewInit, ChangeDetectorRef, Component, HostListener, ViewChild} from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,7 @@ export class FooterComponent implements AfterViewInit{
 
   @ViewChild('bg-footer-2') bgFooter2: any;
 
+  isHomepage = true
   currentPath = '/home'
   private mobileBreakpoint = 768; // Max width for mobile view
   private tabletBreakpoint = 992; // Max width for tablet view
@@ -17,11 +19,13 @@ export class FooterComponent implements AfterViewInit{
   private currentCategory: 'mobile' | 'tablet' | 'desktop' = this.getCategory(window.innerWidth);
 
   constructor(
+    private router: Router,
     private ref: ChangeDetectorRef
   ) {
   }
 
   ngAfterViewInit(): void {
+    this.checkRouter()
     this.windowCheck();
   }
 
@@ -39,6 +43,20 @@ export class FooterComponent implements AfterViewInit{
     } else {
       return 'desktop';
     }
+  }
+
+  checkRouter() {
+    this.router.events.subscribe(val => {
+      if (val instanceof NavigationEnd) {
+        this.currentPath = location.pathname
+        if (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home') {
+          document.body.style.backgroundColor = 'white';
+        } else {
+          document.body.style.backgroundColor = '#EDF1F5';
+        }
+        this.isHomepage = (this.currentPath === '/home' || this.currentPath === '/mawaka-venture/home')
+      }
+    })
   }
 
   private handleResizeChange(newCategory: 'mobile' | 'tablet' | 'desktop') {

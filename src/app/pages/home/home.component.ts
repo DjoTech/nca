@@ -7,7 +7,7 @@ import {
   OnInit, ViewChild
 } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {MOBILE_BREAKPOINT, PEOPLE, RESPONSIVE_OPTIONS} from "../../../data/constant";
+import {MOBILE_BREAKPOINT, RESPONSIVE_OPTIONS} from "../../../data/constant";
 
 
 @Component({
