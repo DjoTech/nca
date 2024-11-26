@@ -84,3 +84,25 @@
   position: relative;
   z-index: 0; /* Ensures the image is below the gradient */
 }
+.content-text-product{
+  max-width: 60%;
+}
+
+@media (max-width: 576px) {
+  .product-list {
+    padding: 1rem;
+  }
+  .home-title {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+  .card-body {
+    font-size: 1rem;
+  }
+  .content-text-product{
+    max-width: 100%;
+  }
+
+}
+
+

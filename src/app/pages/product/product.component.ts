@@ -15,4 +15,5 @@ export class ProductComponent {
   selectProduct(productId: number) {
     this.selectedProduct = productId;
   }
+
 }
