@@ -8,7 +8,7 @@
 </div>
 
 <section
-  class="product-list m-5 position-relative overflow-hidden rounded-3"
+  class="product-list m-3 m-md-5 pt-5 position-relative overflow-hidden rounded-3"
   style="background-color: white; max-height: 1500px; min-height: 500px;"
   id="myGroup"
 >
@@ -23,11 +23,11 @@
     />
   </div>
   <div
-    class="position-relative z-1 m-5"
-    style="background-color: transparent; max-width: 60%;"
+    class="content-text-product position-relative z-1 mx-3 mx-md-5 py-5"
+    style="background-color: transparent;"
   >
     <h1>NCA for Customer</h1>
-    <p>
+    <p style="font-size: 1.3rem" class="mb-5">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id nibh
       sed nulla commodo maximus nec sed tortor.
     </p>
@@ -35,15 +35,15 @@
       <ng-container *ngFor="let item of product; let i = index">
         <!-- Product Number -->
         <div
-          class="list-group-item fw-bolder home-title border-0 col-12 col-md-1 d-flex justify-content-center"
+          class="list-group-item fw-bolder home-title border-0 col-12 col-md-1 d-flex justify-content-center align-items-center text-white text-center py-5"
           [ngClass]="{
-            'bg-danger text-white': selectedProduct === i,
-            'bg-light': selectedProduct !== i,
+            'bg-danger': selectedProduct === i,
+            'bg-dark-subtle': selectedProduct !== i,
             'rounded-top-1': item.no=='1',
             'rounded-bottom-0': item.no=='1',
             'rounded-bottom-1': item.no=='7'
           }"
-          style="cursor: pointer;"
+          style="cursor: pointer; font-size: 1.3rem;"
           (click)="selectProduct(i)"
         >
           {{ item.no }}
@@ -51,7 +51,7 @@
 
         <!-- Product Details -->
         <div
-          class="list-group-item border-0 rounded-0 col-12 col-md-11"
+          class="list-group-item border-0 rounded-0 col-12 col-md-11 d-flex justify-content-center align-items-center text-center"
           style="background-color: transparent;"
         >
           <a
@@ -60,13 +60,17 @@
             style="background-color: transparent; cursor: pointer;"
             (click)="selectProduct(i)"
           >
-            <div class="d-flex w-100 justify-content-between" style="background-color: transparent;">
-              <h5 class="mb-1">{{ item.title }}</h5>
+            <div class="d-flex w-100 justify-content-between" style="background-color: transparent;"
+            [ngClass]="{
+              'text-danger': selectedProduct === i,
+              'text-dark-emphasis': selectedProduct !== i,
+            }">
+              <h3 class="mb-1">{{ item.title }}</h3>
             </div>
             <div
               *ngIf="selectedProduct === i"
-              class="card card-body border-0 rounded-0 p-0"
-              style="background-color: rgba(0, 0, 0, 0); font-weight: normal;"
+              class="card card-body border-0 rounded-0 p-0 text-start"
+              style="background-color: rgba(0, 0, 0, 0); font-weight: normal; font-size: 1.3rem;"
             >
               {{ item.contents }}
             </div>
