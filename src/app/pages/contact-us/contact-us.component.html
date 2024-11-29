@@ -1,35 +1,35 @@
 <section class="container-fluid bg-white">
-  <div class="row p-md-5">
+  <div class="row p-md-5" [formGroup]="form">
     <div class="col-md-6 mt-5">
       <div class="row">
         <div class="col-md-7">
-          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Nama">
+          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Nama" formControlName="name">
         </div>
         <div class="col-md-5">
-          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Nama Perusahaan">
+          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Nama Perusahaan" formControlName="company_name">
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-md-7">
-          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="No. Handphone">
+          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="No. Handphone" formControlName="phone_number">
         </div>
         <div class="col-md-5">
-          <input type="email" class="form-control border-0 nca-bg-secondary" placeholder="Email">
+          <input type="email" class="form-control border-0 nca-bg-secondary" placeholder="Email" formControlName="email">
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-md-12">
-          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Subjek">
+          <input type="text" class="form-control border-0 nca-bg-secondary" placeholder="Subjek" formControlName="subject">
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-md-12">
-          <textarea name="" id="" cols="30" rows="10" class="form-control border-0 nca-bg-secondary" placeholder="Pesan"></textarea>
+          <textarea name="" id="" cols="30" rows="10" class="form-control border-0 nca-bg-secondary" placeholder="Pesan" formControlName="message"></textarea>
         </div>
       </div>
       <div class="row mt-3">
         <div class="col-md-12">
-          <button class="w-100 btn btn-danger fw-bold">Submit Pesan</button>
+          <button class="w-100 btn btn-danger fw-bold" type="submit" (click)="onSubmit()" [disabled]="form.invalid">Submit Pesan</button>
         </div>
       </div>
     </div>
