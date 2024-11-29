@@ -36,6 +36,7 @@ export class ContactUsComponent implements OnInit{
   generateMessage(): string {
     const name = this.form.get('name').value;
     const email = this.form.get('email').value;
+    const companyName = this.form.get('company_name').value;
     const phoneNumber = this.form.get("phone_number").value;
     const message = this.form.get('message').value;
 
@@ -43,7 +44,7 @@ export class ContactUsComponent implements OnInit{
 
         Dengan hormat,
 
-        Perkenalkan, nama saya ${name}. Setelah melihat informasi pada situs web PT Nuansa Chatur Anugerah, saya tertarik dengan produk yang tercantum dalam katalog yang tersedia. Saya ingin meminta penjelasan lebih lanjut terkait:
+        Perkenalkan, nama saya ${name} dari ${companyName}. Setelah melihat informasi pada situs web PT Nuansa Chatur Anugerah, saya tertarik dengan produk yang tercantum dalam katalog yang tersedia. Saya ingin meminta penjelasan lebih lanjut terkait:
 
         ${message}
 
