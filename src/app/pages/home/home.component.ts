@@ -104,6 +104,66 @@ export class HomeComponent implements OnInit  {
         name: "Finnet",
         img: "assets/img/home/finnet.png",
       },
+      {
+        name: "Adhi",
+        img: "assets/img/home/adhi.png",
+      },
+      {
+        name: "BTN",
+        img: "assets/img/home/btn.png",
+      },
+      {
+        name: "Infrako",
+        img: "assets/img/home/infrako.png",
+      },
+      {
+        name: "Infrastruktur Bisnis Sejahtera",
+        img: "assets/img/home/infrastruktur bisnis sejahtera.png",
+      },
+      {
+        name: "Komitel",
+        img: "assets/img/home/komitel.png",
+      },
+      {
+        name: "Moratelindo",
+        img: "assets/img/home/moratelindo.png",
+      },
+      {
+        name: "Palapa Timur Telematika",
+        img: "assets/img/home/palapa timur telematika.png",
+      },
+      {
+        name: "Persada Sokka",
+        img: "assets/img/home/persada sokka.png",
+      },
+      {
+        name: "Poca Group",
+        img: "assets/img/home/poca group.png",
+      },
+      {
+        name: "Protelindo",
+        img: "assets/img/home/protelindo.png",
+      },
+      {
+        name: "R",
+        img: "assets/img/home/R.png",
+      },
+      {
+        name: "Sisindokom",
+        img: "assets/img/home/sisindokom.png",
+      },
+      {
+        name: "STP",
+        img: "assets/img/home/STP.png",
+      },
+      {
+        name: "Telkom Property",
+        img: "assets/img/home/telkom property.png",
+      },
+      {
+        name: "Tower Bersama Group",
+        img: "assets/img/home/tower bersama group.png",
+      },
     ]
   }
 
