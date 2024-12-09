@@ -3,7 +3,7 @@
   <div class="hero-content">
     <h1 class='home-title'>Empowering Industries with Cutting-Edge Power Solutions</h1>
     <p>Discover cutting-edge products that deliver reliable, safe, and sustainable energy solutions for tomorrow's world.</p>
-    <button class="cta-button">More Information <i class="bi bi-arrow-right"></i></button>
+    <button class="cta-button" routerLink="../information">More Information <i class="bi bi-arrow-right"></i></button>
   </div>
 </div>
 
@@ -26,11 +26,7 @@
     class="content-text-product position-relative z-1 mx-3 mx-md-5 py-5"
     style="background-color: transparent;"
   >
-    <h1>NCA for Customer</h1>
-    <p style="font-size: 1.3rem" class="mb-5">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id nibh
-      sed nulla commodo maximus nec sed tortor.
-    </p>
+    <h1 class="mb-5">NCA for Customer</h1>
     <div class="grid gap-0 list-group list-group-horizontal row" style="background-color: transparent;">
       <ng-container *ngFor="let item of product; let i = index">
         <!-- Product Number -->
